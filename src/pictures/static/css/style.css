@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+@import "reset.css";
+
+
+
+
+
+.container{
+    margin: 20px auto;
+    max-width: 1200px;
+
+}
+
+.card {
+  margin-bottom: 2rem;  
+}
+
+.card-img{
+    max-width: 100%;
+    height: auto;
+
+}
+.card-text {
+    font-size:14px;
+    line-height:1.5;
+}
+.card-body {
+    margin: 10px;
+  }
+  
+.container-title{
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+
+}
+.container-title h1{
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+.star-rating {
+    font-size:14px;
+}
+
+.star-rating p {
+    margin-bottom: 0.2rem;
+    font-size:16px;
+    font-weight: bold;
+
+}
+
+.welcome-message {
+    color: white;
+    font-weight: bold;
+}
+
+/* style.css */
+.user-name {
+    text-transform: uppercase; /* Convertit le texte en majuscules */
+    color: white; /* Définit la couleur du texte en blanc */
+    font-weight: bold; /* Met le texte en gras */
+}
+
+
+
+body {
+    background-color:mintcream;
+    font-family:'Raleway', sans-serif;
+    margin: 5rem;
+}
+
+nav{
+    margin: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+#gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+@media(max-width=1024px){
+    #gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        margin-top: 5rem;
+    } 
+}
+.subtitle{
+    margin: 0.5rem;
+    font-size:large;
+    width: 85%;
+
+}
+
+/* Votre fichier CSS personnalisé */
+
+.date-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 5rem;
+}
+
+.date-list li {
+    margin-bottom: 2rem;
+}
+
+.date {
+    display: block;
+    margin-bottom: 0.3rem;
+
+}
+
+.total-pictures {
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+/* .first-image {
+    width: 200px;
+    height: 150px;
+    border: 1px solid #ddd;
+} */
+hr{
+    color:black;
+    border: 1px solid #000;
+
+}
+.items-title{
+    display: flex;
+    align-items: center;
+
+
+}
+
+
+.total-pictures{
+    color:steelblue;
+    margin-left: 20rem;
+
+    
+}
+/* forms styling */
+
+input{
+  display:block;
+  padding: .75rem;
+  border : 1px solid #ced4da; 
+  
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Pour occuper toute la hauteur de la fenêtre */
+    min-width: 600px;
+}
+
+.form-container form {
+    max-width: 400px; /* Pour limiter la largeur du formulaire */
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.form-container p {
+    margin-top: 20px;
+
+}
+
+.form-container button {
+    margin-top: 10px;
+}
+
+/* Ajouter une police en gras léger pour la classe .light-bold */
+.light-bold {
+    font-weight: bold; /* Utilisez une valeur inférieure à 400 pour obtenir une police en gras léger */
+}
+
+
+

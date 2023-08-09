@@ -1,0 +1,63 @@
+{% extends 'pictures/base.html' %}
+
+
+
+
+{% block title %}
+<title>Images by rating</title>
+{% endblock title %}
+
+{% block content %}
+<div class= "container">
+<h1 class="image-list-date">images by rating</h1>
+
+{% for image in images_by_rating %}
+    <div class="card">
+        <div class="row no-gutters">
+            <div class="col-md-6">
+                <img src="{{ image.picture }}" alt="{{ image.caption }}" class="card-img">
+            </div>
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text"><span class="light-bold">Media</span> : {{ image.media }} </p>
+                    <p class="card-text"><span class="light-bold">Section Title</span> : {{ image.sectionTitle }}</p> 
+                    <p class="card-text"><span class="light-bold">Caption</span> : {{ image.caption }}</p>
+                    <p class="card-text"><span class="light-bold">Photographer</span> : {{ image.author }} </p>
+                    <p class="card-text"><span class="light-bold">Credits</span> : {{ image.credits }}</p>
+                    <p class="card-text"><span class="light-bold">Picture Editor</span>: {{ image.pictureEditor }}</p>
+
+                    <hr>
+                
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+
+
+    {% if is_paginated %}
+    <div class="pagination">
+      <span class="step-links">
+          {% if page_obj.has_previous %}
+              <a href="?page=1">&laquo; première</a>
+              <a href="?page={{ page_obj.previous_page_number }}">précédente</a>
+          {% endif %}
+  
+          <span class="current">
+              Page {{ page_obj.number }} sur {{ page_obj.paginator.num_pages }}.
+          </span>
+  
+          {% if page_obj.has_next %}
+              <a href="?page={{ page_obj.next_page_number }}">suivante</a>
+              <a href="?page={{ page_obj.paginator.num_pages }}">dernière &raquo;</a>
+          {% endif %}
+      </span>
+    </div>
+  {% endif %}
+</div>
+
+{% endblock content %}
+
+

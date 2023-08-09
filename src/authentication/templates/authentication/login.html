@@ -1,0 +1,25 @@
+{% extends 'pictures/base.html' %}
+
+
+{% block title %}
+
+<title> Login Page </title>
+
+{% endblock title %}
+
+
+{% block content %}
+<div class = "form-container">
+<h1> Login Page </h1>
+
+<p> {{ message }} </p>
+
+<form method="post">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <button class= "btn btn-primary" type ="submit"> Login </button>
+</form>
+
+<p> Not still member ? <a href="{% url 'signup' %}"> Register Now </a></p>
+</div>
+{% endblock content %}
