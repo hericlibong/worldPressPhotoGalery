@@ -1,4 +1,5 @@
 {% extends 'pictures/base.html' %}
+{% load ratings %}
 
 
 
@@ -22,13 +23,17 @@
                     <p class="card-text"><span class="light-bold">Media</span> : {{ image.media }} </p>
                     <p class="card-text"><span class="light-bold">Section Title</span> : {{ image.sectionTitle }}</p> 
                     <p class="card-text"><span class="light-bold">Caption</span> : {{ image.caption }}</p>
+                    <p class="card-text"><span class="light-bold">Location</span> : {{ image.location }}</p>
                     <p class="card-text"><span class="light-bold">Photographer</span> : {{ image.author }} </p>
                     <p class="card-text"><span class="light-bold">Credits</span> : {{ image.credits }}</p>
                     <p class="card-text"><span class="light-bold">Picture Editor</span>: {{ image.pictureEditor }}</p>
 
                     <hr>
                 
-                    
+                    <div class = "star-rating"> 
+                        {% ratings  image read_only=True  icon_height=20 icon_width=20 %}
+                    </div>
+
                 </div>
             </div>
         </div>

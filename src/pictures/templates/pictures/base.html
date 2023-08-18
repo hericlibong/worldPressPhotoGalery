@@ -10,15 +10,34 @@
         <!-- Dans le <head> de votre template -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <!-- Inclure Bootstrap avec Popper -->
 
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <link rel = "stylesheet" href ="{% static 'css/style.css' %}">
         <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
         <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     </head>
     <body>
         <nav class="navbar fixed-top bg-dark border-bottom border-body" data-bs-theme="dark">
             <div class="container-fluid">
                 <a href="{% url 'home' %}" class="btn btn-primary">Home Page</a>
+                <a href = "{% url 'stats' %}" class = "btn btn-primary"> stats </a>
+                <a href = "{% url 'image-search' %}" class = "btn btn-primary"> Search Tools</a>
+
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Browse Images
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{% url 'images-ratings' %}">Images by Ratings</a>
+                        <a class="dropown-item"  href="{% url 'stats' %}">Graphics</a>
+                        <a class="dropdown-item" href="{% url 'image-media' %}">Images by Media</a>
+                        <a class="dropown-item"  href="{% url 'image-search' %}">Search Tools</a>
+                        
+                    </div>
+                </div>
         
                 {% if user.is_authenticated %}
                 <p class="welcome-message">

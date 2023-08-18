@@ -1,0 +1,36 @@
+{% extends 'pictures/base.html' %}
+
+{% block content %}
+
+<h1> Statistics </h1>
+
+<canvas id="myChart" width="400" height="400"></canvas>
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var mediaData = JSON.parse('{{ media_data|safe }}');
+
+    var labels = mediaData.map(function(item) {
+        return item.media;
+    });
+
+    var values = mediaData.map(function(item) {
+        return item.count;
+    });
+
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Number of Entries by Media',
+                data: values,
+                backgroundColor: 'blue'
+            }]
+        },
+        options: {
+            // Options du graphique
+        }
+    });
+</script>
+
+{% endblock %}

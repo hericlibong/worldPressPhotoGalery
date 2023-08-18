@@ -23,9 +23,26 @@ class TheweekPicturesSpider(CrawlSpider):
             custom_items['pubDate'] = datetime.strptime(date_string, '%B %d, %Y' ).strftime('%Y-%m-%d')
             custom_items['caption'] = item.xpath("./div/div//p[1]/text()[1]").get()
             author_credits_item = item.xpath("./div/div//p[2]")
-            custom_items['author'] = author_credits_item.xpath("substring-before(text(), '/')").get().strip()
-            custom_items['credits'] = author_credits_item.xpath("substring-after(text(), '/')").get().strip()
-            custom_items['picture'] = item.xpath(".//figure/img/@data-src").get()
+            custom_items['author'] = author_credits_item.xpath("substring-before(text(), '/')").get()
+            custom_items['credits'] = author_credits_item.xpath("substring-after(text(), '/')").get()
+            
+            
+            
+            #custom_items['picture'] = item.xpath(".//figure/img/@data-src").get()
+            img_srcset = item.xpath(".//figure/img/@data-srcset").get()
+            
+            image_links = img_srcset.split(',')
+            
+            full_desktop_link = None
+            for link in image_links:
+                if 'full-desktop' in link:
+                    full_desktop_link = link.strip().split(' ')[0]
+                    break
+            custom_items['picture'] = 'https://mediacloud.theweek.com/image/upload/f_auto,' + full_desktop_link
+            
+            
+            
+            
             custom_items['location'] = 'Ref. to caption' 
             custom_items['pictureEditor'] = response.xpath("//div[@class='polaris__post-meta--author']/a/text()").get()
             yield custom_items

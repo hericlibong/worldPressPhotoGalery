@@ -2,14 +2,15 @@
 
 import os
 import sqlite3
-import django
+#import django
 
 
 class ApipicturesPipeline:
     
     def __init__(self):
         # Chemin d'accès au dossier 'database' dans le dossier principal
-        db_path = '/Users/mac/WORLDPRESSPHOTO/src/db.sqlite3'
+        #/Users/mac/worldPressPhotoGalery/src/db.sqlite3
+        db_path = '/Users/mac/worldPressPhotoGalery/src/db.sqlite3'
        
         self.con = sqlite3.connect(db_path) 
         

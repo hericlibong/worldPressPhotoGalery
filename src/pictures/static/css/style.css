@@ -40,6 +40,17 @@
     
 }
 
+/* styles.css */
+.container-search {
+    display: flex;
+    
+}
+
+.container-search form {
+    margin-bottom: 10rem;
+}
+
+
 .star-rating {
     font-size:14px;
 }
@@ -155,6 +166,99 @@ input{
   border : 1px solid #ced4da; 
   
 }
+
+/* input, #id_keyword{
+    display:block;
+    padding: .75rem;
+    border : 1px solid grey;
+}
+
+#id_keyword{
+ margin-bottom: 2rem;    
+} */
+
+/* search tools forms styling */
+
+.search-title{
+    font-size: 34px;
+    color: blue;
+    margin-bottom: 2rem;
+    align-items: center;
+
+}
+
+.search-form {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group select,
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #d0d0d0;
+}
+
+/* search tools forms styling */
+
+
+/* Styliser la liste des résultats */
+.search-results {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+/* Styliser chaque élément de résultat */
+.result-item {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+/* Styliser la vignette */
+.thumbnail img {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+}
+
+/* Styliser les détails */
+.details {
+    flex: 1;
+}
+
+/* Ajouter un peu d'espace entre les détails */
+.details p {
+    margin-bottom: 5px;
+}
+
+
+
 
 .form-container {
     display: flex;

@@ -2,7 +2,7 @@ from django.contrib import admin
 from pictures.models import PhotoGallery
 
 class PhotoGalleryAdmin(admin.ModelAdmin):
-    list_display = ('media', 'pubDate', 'sectionTitle', 'author', 'credits', 'pictureEditor',)
+    list_display = ('media', 'pubDate', 'sectionTitle', 'author', 'credits', 'pictureEditor', )
     search_fields = ('pubDate', 'media',)
     list_per_page = 10
 

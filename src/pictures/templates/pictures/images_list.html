@@ -9,6 +9,8 @@
 
 {% block content %}
 <div class= "container">
+<a href = "{% url 'images-ratings' %}" class = "btn btn-primary"> Images by Ratings</a>
+
 <h1 class="image-list-date">Images for {{ date }}</h1>
 
 {% for image in image_list %}
@@ -22,6 +24,7 @@
                     <p class="card-text"><span class="light-bold">Media</span> : {{ image.media }} </p>
                     <p class="card-text"><span class="light-bold">Section Title</span> : {{ image.sectionTitle }}</p> 
                     <p class="card-text"><span class="light-bold">Caption</span> : {{ image.caption }}</p>
+                    <p class="card-text"><span class="light-bold">Location</span> : {{ image.location }}</p>
                     <p class="card-text"><span class="light-bold">Photographer</span> : {{ image.author }} </p>
                     <p class="card-text"><span class="light-bold">Credits</span> : {{ image.credits }}</p>
                     <p class="card-text"><span class="light-bold">Picture Editor</span>: {{ image.pictureEditor }}</p>

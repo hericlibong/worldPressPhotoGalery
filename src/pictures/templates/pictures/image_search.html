@@ -1,0 +1,47 @@
+{% extends 'pictures/base.html' %}
+
+{% block content %}
+
+<h1 class="search-title"> Search Tools</h1>
+
+<form method="GET" class="search-form">
+    <div class="form-group">
+        <label for="{{ form.keyword.id_for_label }}">Keyword</label>
+    {{ form.keyword }}
+</div>
+<div class="form-group">
+    <label for="{{ form.search_field.id_for_label }}"> Search On</label>
+    {{ form.search_field }}
+</div>
+    <button class=" btn btn-outline-secondary" type="submit">Search</button>
+
+</form>
+
+{% if images %}
+<div class="search-results">
+    <p>{{ results_counts }} results found.</p> 
+    {% for image in images %}
+    <div class="result-item">
+        <div class="thumbnail">
+            <img src="{{ image.picture }}" alt="{{ image.caption }}">
+        </div>
+        <div class="details">
+            <p><strong>Media:</strong> {{ image.media }}</p>
+            <p><strong>Date:</strong> {{ image.pubDate }}</p>
+            <p><strong>Caption:</strong> {{ image.caption }}</p>
+            <p><strong>Location:</strong> {{ image.location }}</p>
+            <p><strong>Credits:</strong> {{ image.credits }}</p>
+            <p><strong>Author:</strong> {{ image.author }}</p>
+            <p><strong>Picture Editor:</strong> {{ image.pictureEditor }}</p>
+
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<p>No images found.</p>
+{% endif %}
+
+
+
+{% endblock content %}

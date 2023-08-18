@@ -5,7 +5,8 @@ import sys
 import subprocess
 
 # Récupérer le chemin complet du projet Django "gallery"
-django_project_path = os.path.abspath('/Users/mac/WORLDPRESSPHOTO/src/gallery')
+#/Users/mac/worldPressPhotoGalery/src/gallery/management/commands/run_spiders.py
+django_project_path = os.path.abspath('/Users/mac/worldPressPhotoGalery/src/gallery')
 sys.path.insert(0, django_project_path)
     
 # Lancer les spiders Scrapy à partir du projet Django

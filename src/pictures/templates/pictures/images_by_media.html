@@ -1,0 +1,71 @@
+{% extends 'pictures/base.html' %}
+{% load ratings %}
+
+{% block content %}
+<div class= "container">
+    
+    <form method="GET" class="mb-3">
+        <label for="media" class="form-label">Select Media:</label>
+        <select name="media" id="media" class="form-select form-select-lg mb-3" aria-label="large select exemple">
+            <option value="">-- Select Media --</option>
+            {% for media in available_media %}
+                <option value="{{ media }}">{{ media }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit" class="btn btn-primary">Filter</button>
+    </form>
+    
+    
+    <h1 class="image-list-date">images by media - {{ request.GET.media }}</h1>
+    {% if images_by_media_count %}
+    <p>Total Images: {{ images_by_media_count }}</p>
+    {% endif %}
+
+
+    {% for image in images_by_media %}
+        <div class="card">
+            <div class="row no-gutters">
+                <div class="col-md-6">
+                    <img src="{{ image.picture }}" alt="{{ image.caption }}" class="card-img">
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <p class="card-text"><span class="light-bold">Media</span> : {{ image.media }} </p>
+                        <p class="card-text"><span class="light-bold">Section Title</span> : {{ image.sectionTitle }}</p> 
+                        <p class="card-text"><span class="light-bold">Caption</span> : {{ image.caption }}</p>
+                        <p class="card-text"><span class="light-bold">Photographer</span> : {{ image.author }} </p>
+                        <p class="card-text"><span class="light-bold">Credits</span> : {{ image.credits }}</p>
+                        <p class="card-text"><span class="light-bold">Picture Editor</span>: {{ image.pictureEditor }}</p>
+                        <hr>
+                        <div class = "star-rating">
+                            <p> See the rating score </p>
+                            {% ratings image icon_height=20 icon_width=20  %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    {% if is_paginated %}
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?media={{ request.GET.media }}&page=1">&laquo; première</a>
+                <a href="?media={{ request.GET.media }}&page={{ page_obj.previous_page_number }}">précédente</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }} sur {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?media={{ request.GET.media }}&page={{ page_obj.next_page_number }}">suivante</a>
+                <a href="?media={{ request.GET.media }}&page={{ page_obj.paginator.num_pages }}">dernière &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+    {% endif %}
+
+
+</div>
+{% endblock content %}
