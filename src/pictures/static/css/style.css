@@ -1,8 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&display=swap');
 @import "reset.css";
 
 
 
+body {
+    background-color:mintcream;
+    font-family:'Fira Sans';
+    margin: 5rem;
+}
+
+.welcome-message span {
+    color:black;
+}
+
+.navbar-container {
+    margin-top: 0; /* Réinitialisez la marge supérieure à 0 */
+    /* Ajoutez un espace de remplissage au-dessus de la navbar si nécessaire */
+  }
+
+  .navbar {
+    height: 70px; /* Vous pouvez ajuster cette valeur en fonction de vos besoins */
+  }
+  
+  
 
 
 .container{
@@ -12,7 +32,8 @@
 }
 
 .card {
-  margin-bottom: 2rem;  
+  margin-bottom: 2rem;
+  border: none;  
 }
 
 .card-img{
@@ -25,8 +46,19 @@
     line-height:1.5;
 }
 .card-body {
-    margin: 10px;
-  }
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+}
+
+.card-body a {
+    margin-right: 2rem;
+    text-decoration: none !important;
+    color:#000;
+
+
+}
   
 .container-title{
     margin-top: 10rem;
@@ -76,17 +108,8 @@
 
 
 
-body {
-    background-color:mintcream;
-    font-family:'Raleway', sans-serif;
-    margin: 5rem;
-}
 
-nav{
-    margin: 2rem;
-    display: flex;
-    justify-content: space-between;
-}
+
 
 #gallery {
     display: flex;

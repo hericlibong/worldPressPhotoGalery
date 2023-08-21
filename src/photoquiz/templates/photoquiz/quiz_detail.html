@@ -1,0 +1,53 @@
+{% extends 'pictures/base.html' %}
+
+{% block content %}
+<h1>{{ quiz.title }}</h1>
+<p>{{ quiz.description }}</p>
+
+<div>
+    <h2>{{ current_event.question }}</h2>
+    <img src="{{ current_event.image_url }}" alt="{{ current_event.question }}">
+
+    <form method="post">
+        {% csrf_token %}
+
+        {% for answer in current_event.answers.all %}
+        <label>
+            <input type="radio" name="event_{{ current_event.id }}" value="{{ answer.id }}">
+            {{ answer.answer_text }}
+        </label><br>
+        {% endfor %}
+
+        {% if not current_event.submitted %}
+        <button type="submit">Submit</button>
+        {% endif %}
+    </form>
+
+
+    {% if current_event.success_message %}
+    <div class="alert alert-success">{{ current_event.success_message }}</div>
+    <p>{{ current_event.correct_answer_text }}</p> <!-- Afficher la légende -->
+    {% endif %}
+
+    {% if current_event.error_message %}
+    <div class="alert alert-danger">{{ current_event.error_message }} </div>
+    <p>{{ current_event.correct_answer_text }}</p>
+
+    {% endif %}
+
+    {% if current_event_page.has_previous %}
+    <a href="{% url 'quiz-detail' slug=quiz.slug event_number=current_event_page.previous_page_number %}"
+        class="btn btn-secondary">Previous question</a>
+    {% endif %}
+
+    {% if current_event_page.has_next %}
+    <a href="{% url 'quiz-detail' slug=quiz.slug event_number=current_event_page.next_page_number %}"
+        class="btn btn-primary">Next Question </a>
+    {% else %}
+    <a href="{% url 'final-score' slug=quiz.slug %}" class="btn btn-primary"> See Your Score </a>
+    {% endif %}
+
+
+    <hr>
+
+    {% endblock content %}

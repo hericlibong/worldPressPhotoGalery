@@ -12,21 +12,18 @@
 
 
 <div class="container">
-    <h1>Latest Pictures</h1>
+    <h1>Latest Entries</h1>
 <hr>
     <div class="row">
         {% for item in date_list %}
         <div class="col-md-4">
-            <div class="card">
-                <div class="card-header">
-                    <a href="{% url 'image_list_by_date' item.pubDate|date:'Y-m-d' %}">{{ item.pubDate|date:"D j M Y" }}</a>
-                    
-                </div>
+            <div class="card">  
                 <a href="{% url 'image_list_by_date' item.pubDate|date:'Y-m-d' %}">
                     <img class="card-img-top" src="{{ item.first_image }}" alt="Image for {{ item.pubDate|date:'Y-m-d' }}">
                 </a>
-                <div class="card-body">
-                    <p class="card-text">{{ item.total_photos }} pictures</p>
+                <div class="card-body" style ="padding:0rem;">
+                    <a href="{% url 'image_list_by_date' item.pubDate|date:'Y-m-d' %}" style ="font-size:large;"> Pictures of {{ item.pubDate|date:"D j M Y" }}</a>
+                    <p class="card-text">{{ item.total_photos }} pictures to vote</p>
             
                    
                 </div>

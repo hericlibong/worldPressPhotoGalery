@@ -6,7 +6,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from rest_framework.views import APIView
 from pictures.forms import ImageSearchForm
 from pictures.models import PhotoGallery
-from django.db.models import Count, F, Subquery, OuterRef
+from django.db.models import Count, F, Subquery, OuterRef, Q
 
 from datetime import datetime                                                                               
 
@@ -139,10 +139,22 @@ def image_search_view(request):
         keyword = form.cleaned_data.get('keyword')
         search_field = form.cleaned_data.get('search_field')
 
-        if keyword and search_field:
-            # Utilisez le champ de recherche sélectionné pour filtrer les images
-            filter_kwargs = {f'{search_field}__icontains': keyword}
-            images = PhotoGallery.objects.filter(**filter_kwargs)
+        # if keyword and search_field:
+        #     # Utilisez le champ de recherche sélectionné pour filtrer les images
+        #     filter_kwargs = {f'{search_field}__icontains': keyword}
+        #     images = PhotoGallery.objects.filter(**filter_kwargs)
+        #     results_counts = len(images)
+        
+        if keyword:
+            if search_field == 'all':
+                # Utilisation de Q pour rechercher dans tous les champs pertinents
+                filter_q = Q(caption__icontains=keyword) | Q(media__icontains=keyword) | Q(credits__icontains=keyword) | Q(author__icontains=keyword) | Q(location__icontains=keyword)
+                images = PhotoGallery.objects.filter(filter_q) 
+            else:
+                # Utilisation du champ de recherche sélectionné pour filtrer les images
+                filter_kwargs = {f'{search_field}__icontains': keyword}
+                images = PhotoGallery.objects.filter(**filter_kwargs)
+
             results_counts = len(images)
 
     context = {

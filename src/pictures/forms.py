@@ -7,4 +7,10 @@ class ImageSearchForm(forms.Form):
         ('media', 'Media'),
         ('credits', 'Credits'),
         ('author', 'Author'),
+        ('location', 'Location'),
+        ('all', 'All fields')
     ], required=False, label='Search On :')
+    
+    
+    
+    
