@@ -9,7 +9,7 @@
 
 {% block content %}
 <div class= "container">
-<a href = "{% url 'images-ratings' %}" class = "btn btn-primary"> Images by Ratings</a>
+    
 
 <h1 class="image-list-date">Images for {{ date }}</h1>
 
@@ -18,26 +18,35 @@
         <div class="row no-gutters">
             <div class="col-md-6">
                 <img src="{{ image.picture }}" alt="{{ image.caption }}" class="card-img">
+    
             </div>
             <div class="col-md-6">
                 <div class="card-body">
                     <p class="card-text"><span class="light-bold">Media</span> : {{ image.media }} </p>
                     <p class="card-text"><span class="light-bold">Section Title</span> : {{ image.sectionTitle }}</p> 
                     <p class="card-text"><span class="light-bold">Caption</span> : {{ image.caption }}</p>
+                    <p class="card-text"><span class="light-bold">Date</span> : {{ image.pubDate | date:"l, j  b Y" }}</p>
                     <p class="card-text"><span class="light-bold">Location</span> : {{ image.location }}</p>
                     <p class="card-text"><span class="light-bold">Photographer</span> : {{ image.author }} </p>
                     <p class="card-text"><span class="light-bold">Credits</span> : {{ image.credits }}</p>
                     <p class="card-text"><span class="light-bold">Picture Editor</span>: {{ image.pictureEditor }}</p>
                     <p class="card-text"><span class="light-bold">ID Number</span>: {{ image.id }}</p>
+                    {% if image.pageUrl %}
+                    <p class="card-text"><span class="light-bold"><a href="{{ image.pageUrl }}" class="blue-bold" style="color:blue;"> Go to {{ image.media }} Photo Gallery</a></span></p>
+                        {% endif %}
+
 
 
                     <hr>
-                <div class = "star-rating">
+                <div >
+                    
                     <p> Give a rate to this picture </p>
-                    {% ratings image icon_height=20 icon_width=20 %}
+                    {% ratings image %}
+                    
                 </div>
                     
                 </div>
+                
             </div>
         </div>
     </div>
@@ -49,22 +58,23 @@
     <div class="pagination">
       <span class="step-links">
           {% if page_obj.has_previous %}
-              <a href="?page=1">&laquo; première</a>
-              <a href="?page={{ page_obj.previous_page_number }}">précédente</a>
+              <a href="?page=1">&laquo; First</a>
+              <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
           {% endif %}
   
           <span class="current">
-              Page {{ page_obj.number }} sur {{ page_obj.paginator.num_pages }}.
+              Page {{ page_obj.number }} on {{ page_obj.paginator.num_pages }}.
           </span>
   
           {% if page_obj.has_next %}
-              <a href="?page={{ page_obj.next_page_number }}">suivante</a>
-              <a href="?page={{ page_obj.paginator.num_pages }}">dernière &raquo;</a>
+              <a href="?page={{ page_obj.next_page_number }}">Next..</a>
+              <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
           {% endif %}
       </span>
     </div>
   {% endif %}
 </div>
+
 
 {% endblock content %}
 

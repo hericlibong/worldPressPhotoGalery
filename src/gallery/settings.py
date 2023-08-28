@@ -125,12 +125,20 @@ SCRAPY_SETTINGS = {
     'APIpictures.APIpictures.pipelines.ApipicturesPipeline': 1,
 }
 
-STAR_RATINGS_RANGE = 10
-STAR_RATINGS_RERATE = False
+
+
 
 AUTH_USER_MODEL ='authentication.User'
 
 LOGIN_REDIRECT_URL = 'home'
 
-
+STAR_RATINGS_RANGE = 10
+STAR_RATINGS_RERATE = False
+RATINGS_STAR_RATINGS = {
+    'anonymity': False  # Désactiver la notation anonyme
+    # ...
+}
+STAR_RATINGS_ANONYMOUS = False
+STAR_RATINGS_STAR_WIDTH = 20
+STAR_RATINGS_STAR_HEIGHT = 20
 

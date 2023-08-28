@@ -5,6 +5,7 @@ from .forms import QuizForm
 from django.core.paginator import Paginator
 from django.views.generic import ListView
 from photoquiz.models import Quiz
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -33,18 +34,22 @@ class QuizListView(ListView):
 
 
 
-
+@login_required(login_url='login')
 def quiz_detail_view(request, slug, event_number=1):
     quiz = get_object_or_404(Quiz, slug=slug)
     events = quiz.events.all()
+    
+    
+    # Réinitialisation du score si l'utilisateur accède à la première question
+    if event_number == 1:
+        request.session['correct_answers'] = 0
     
     paginator = Paginator(events, per_page = 1)
     event_page = int(event_number)
     current_event_page = paginator.get_page(event_page)
     current_event = current_event_page[0]
     
-    total_questions = quiz.total_questions()
-
+    
     if request.method == 'POST':
         form = QuizForm(event_list = [current_event], data=request.POST)
         if form.is_valid():
@@ -90,10 +95,18 @@ def quiz_final_view(request, slug):
     quiz = get_object_or_404(Quiz, slug=slug)
 
     # ... (autres parties de la vue)
-
+    total_questions = quiz.total_questions()
     # Calcul de la note moyenne (average_score)
+    
+    # Réinitialiser le score si présent dans la session
+    # if 'correct_answers' in request.session:
+    #     del request.session['correct_answers']
+    
     correct_answers = request.session.get('correct_answers', 0)
-    average_score = quiz.calculate_average_score(correct_answers)
+    #average_score = quiz.calculate_average_score(correct_answers)
+    # Calcul de la note moyenne (average_score)
+    average_score = (correct_answers / total_questions) * 100 if total_questions > 0 else 0
+
 
     # Messages en fonction de la note moyenne
     if average_score < 50:

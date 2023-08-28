@@ -10,7 +10,7 @@ from django.contrib.auth.views import LoginView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/recent-pictures/', RecentPictureAPIView.as_view(), name = 'recent_pictures'),
-    path('home/', DateListView.as_view(), name='home'),
+    path('', DateListView.as_view(), name='home'),
     path('images/<str:date>/', ImageListView.as_view(), name='image_list_by_date'),
     path('ratings/', include('star_ratings.urls', namespace='ratings')),
     path('login/', LoginView.as_view(

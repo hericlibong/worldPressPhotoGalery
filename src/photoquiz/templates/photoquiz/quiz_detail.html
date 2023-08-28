@@ -35,17 +35,15 @@
 
     {% endif %}
 
-    {% if current_event_page.has_previous %}
-    <a href="{% url 'quiz-detail' slug=quiz.slug event_number=current_event_page.previous_page_number %}"
-        class="btn btn-secondary">Previous question</a>
-    {% endif %}
-
+    
+<div class="quiz-button">
     {% if current_event_page.has_next %}
     <a href="{% url 'quiz-detail' slug=quiz.slug event_number=current_event_page.next_page_number %}"
-        class="btn btn-primary">Next Question </a>
+        class="btn btn-primary next-question">Next Question </a>
     {% else %}
     <a href="{% url 'final-score' slug=quiz.slug %}" class="btn btn-primary"> See Your Score </a>
     {% endif %}
+</div>
 
 
     <hr>

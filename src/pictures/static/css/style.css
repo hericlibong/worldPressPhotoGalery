@@ -1,110 +1,178 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&display=swap');
-@import "reset.css";
+ @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&display=swap');
+@import "reset.css"; 
 
 
 
 body {
-    background-color:mintcream;
-    font-family:'Fira Sans';
-    margin: 5rem;
-}
+        background-color:mintcream;
+        font-family:'Fira Sans';
+        margin: 5rem;
+    }
 
 .welcome-message span {
-    color:black;
-}
+        color:black;
+    }
 
 .navbar-container {
-    margin-top: 0; /* Réinitialisez la marge supérieure à 0 */
-    /* Ajoutez un espace de remplissage au-dessus de la navbar si nécessaire */
-  }
+        margin-top: 0; 
+       
+     } 
 
-  .navbar {
-    height: 70px; /* Vous pouvez ajuster cette valeur en fonction de vos besoins */
-  }
-  
-  
+.navbar {
+        height: 70px; 
+    }
+       
+
+
+    /* }
+    .navbar-toggler {
+        color: black;
+        border: 1px solid;
+    } */ 
+
 
 
 .container{
-    margin: 20px auto;
-    max-width: 1200px;
+        margin: 20px auto;
+        max-width: 1200px;
 
-}
+    } 
 
 .card {
-  margin-bottom: 2rem;
-  border: none;  
-}
+    margin-bottom: 2rem;
+    border: none;  
+    } 
 
 .card-img{
-    max-width: 100%;
-    height: auto;
+        max-width: 100%;
+        height: auto;
 
-}
+
+    }
+
+
 .card-text {
-    font-size:14px;
-    line-height:1.5;
-}
+        font-size:14px;
+        line-height:1.5;
+    }  
+
 .card-body {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-}
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    } 
 
-.card-body a {
-    margin-right: 2rem;
-    text-decoration: none !important;
-    color:#000;
+.card-body  a {
+        margin-right: 2rem;
+        text-decoration: none !important;
+        color:#000;
 
 
-}
-  
+    }
+    
 .container-title{
-    margin-top: 10rem;
-    display: flex;
-    flex-direction: column;
+        margin-top: 10rem;
+        display: flex;
+        flex-direction: column;
 
-}
+    }
 .container-title h1{
-    text-align: center;
-    font-weight: bold;
-    
-}
+        text-align: center;
+        font-weight: bold;
+        
+    }
 
-/* styles.css */
+    /* styles.css */
 .container-search {
-    display: flex;
-    
-}
+        display: flex;
+        
+    }
 
 .container-search form {
-    margin-bottom: 10rem;
+        margin-bottom: 10rem;
+    }
+
+    /* star ratings styling */
+
+.star-ratings {
+        display: inline-block;
+       
+ } 
+
+.star-ratings-rating-stars-container {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+
+
+
+    /* Styles pour la liste des étoiles vides */
+.star-ratings-rating-background li {
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Styles pour la liste des étoiles pleines */
+.star-ratings-rating-foreground li {
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+
+.star-ratings-rating-empty {
+    width: 20px;
+    height: 20px;
+    background: url(/static/star-ratings/images/stars.png) no-repeat;
+    background-size: 60px;
+    background-position: -20px 0;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .star-ratings-rating-full {
+    width: 20px;
+    height: 20px;
+    background: url(/static/star-ratings/images/stars.png) no-repeat;
+    background-size: 60px;
+    border: none;
+    cursor: pointer;
+  }
+
+
+/* Styles pour les boutons des étoiles lors du survol */
+.star-ratings-rating-empty:hover,
+.star-ratings-rating-full:hover {
+  background-position: -40px 0;
 }
 
 
-.star-rating {
-    font-size:14px;
-}
+    /* .star-ratings {
+        font-size:14px;
+    } */
 
-.star-rating p {
-    margin-bottom: 0.2rem;
-    font-size:16px;
-    font-weight: bold;
+    /* .star-rating p {
+        margin-bottom: 0.2rem;
+        font-size:16px;
+        font-weight: bold;
 
-}
+    } */
 
 .welcome-message {
-    color: white;
-    font-weight: bold;
-}
+        color: white;
+        font-weight: bold;
+    } 
 
-/* style.css */
+    /* style.css */
 .user-name {
-    text-transform: uppercase; /* Convertit le texte en majuscules */
-    color: white; /* Définit la couleur du texte en blanc */
-    font-weight: bold; /* Met le texte en gras */
-}
+        text-transform: uppercase; 
+        color: white; 
+        font-weight: bold; 
+    } 
 
 
 
@@ -112,207 +180,253 @@ body {
 
 
 #gallery {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-}
-
-@media(max-width=1024px){
-    #gallery {
         display: flex;
         flex-direction: column;
         align-items: left;
         margin-top: 5rem;
-    } 
-}
+        margin-bottom: 5rem;
+    }
+
+@media(max-width=1024px){
+    #gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            margin-top: 5rem;
+        } 
+    }
 .subtitle{
-    margin: 0.5rem;
-    font-size:large;
-    width: 85%;
+        margin: 0.5rem;
+        font-size:large;
+        width: 85%;
 
-}
+    }
 
-/* Votre fichier CSS personnalisé */
+    /* Votre fichier CSS personnalisé */
 
 .date-list {
-    list-style: none;
-    padding: 0;
-    margin-top: 5rem;
-}
+        list-style: none;
+        padding: 0;
+        margin-top: 5rem;
+    }
 
 .date-list li {
-    margin-bottom: 2rem;
-}
+        margin-bottom: 2rem;
+    }
 
-.date {
-    display: block;
-    margin-bottom: 0.3rem;
+    .date {
+        display: block;
+        margin-bottom: 0.3rem;
 
-}
+    }
 
 .total-pictures {
-    display: block;
-    margin-bottom: 0.3rem;
-}
+        display: block;
+        margin-bottom: 0.3rem;
+    } 
 
-/* .first-image {
-    width: 200px;
-    height: 150px;
-    border: 1px solid #ddd;
-} */
-hr{
-    color:black;
-    border: 1px solid #000;
+.first-image {
+        width: 200px;
+        height: 150px;
+        border: 1px solid #ddd;
+    }
 
-}
+
+    hr{
+        color:black;
+        border: 1px solid #000;
+
+    }
 .items-title{
-    display: flex;
-    align-items: center;
+        display: flex;
+        align-items: center;
 
 
-}
+    }
 
 
 .total-pictures{
-    color:steelblue;
-    margin-left: 20rem;
+        color:steelblue;
+        margin-left: 20rem;
 
+        
+    }
     
-}
-/* forms styling */
+    
+    
+    /* forms styling */
 
-input{
-  display:block;
-  padding: .75rem;
-  border : 1px solid #ced4da; 
-  
-}
-
-/* input, #id_keyword{
+    /* input{
     display:block;
     padding: .75rem;
-    border : 1px solid grey;
-}
+    border : 1px solid #ced4da; 
+    
+    } */
 
-#id_keyword{
- margin-bottom: 2rem;    
-} */
+    /* input, #id_keyword{
+        display:block;
+        padding: .75rem;
+        border : 1px solid grey;
+    }
 
-/* search tools forms styling */
+    #id_keyword{
+    margin-bottom: 2rem;    
+    } */
 
-.search-title{
-    font-size: 34px;
-    color: blue;
-    margin-bottom: 2rem;
-    align-items: center;
+    /* search tools forms styling */
 
-}
+    /* .search-title{
+        font-size: 34px;
+        color: blue;
+        margin-bottom: 2rem;
+        align-items: center;
 
-.search-form {
-    text-align: center;
-    margin-bottom: 20px;
-}
+    }
 
-.form-group {
-    margin-bottom: 15px;
-}
+    .search-form {
+        text-align: center;
+        margin-bottom: 20px;
+    }
 
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-}
+    .form-group {
+        margin-bottom: 15px;
+    }
 
-.form-group select,
-.form-group input[type="text"] {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+    } */
 
-button[type="submit"] {
-    background-color: #f0f0f0;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
+    /* .form-group select,
+    .form-group input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
 
-button[type="submit"]:hover {
-    background-color: #d0d0d0;
-}
+    button[type="submit"] {
+        background-color: #f0f0f0;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
 
-/* search tools forms styling */
+    button[type="submit"]:hover {
+        background-color: #d0d0d0;
+    } */
 
-
-/* Styliser la liste des résultats */
-.search-results {
-    margin-top: 20px;
-    border-top: 1px solid #ccc;
-    padding-top: 20px;
-}
-
-/* Styliser chaque élément de résultat */
-.result-item {
-    display: flex;
-    margin-bottom: 20px;
-}
-
-/* Styliser la vignette */
-.thumbnail img {
-    width: 100px;
-    height: auto;
-    margin-right: 20px;
-}
-
-/* Styliser les détails */
-.details {
-    flex: 1;
-}
-
-/* Ajouter un peu d'espace entre les détails */
-.details p {
-    margin-bottom: 5px;
-}
+    /* search tools forms styling */
 
 
+    /* Styliser la liste des résultats */
+    .search-results {
+        margin-top: 20px;
+        border-top: 1px solid #ccc;
+        padding-top: 20px;
+    }
 
+    /* Styliser chaque élément de résultat */
+    .result-item {
+        display: flex;
+        margin-bottom: 20px;
+    }
 
-.form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; /* Pour occuper toute la hauteur de la fenêtre */
-    min-width: 600px;
-}
+    /* Styliser la vignette */
+    .thumbnail img {
+        width: 100px;
+        height: auto;
+        margin-right: 20px;
+    }
 
-.form-container form {
-    max-width: 400px; /* Pour limiter la largeur du formulaire */
-    width: 100%;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-.form-container p {
-    margin-top: 20px;
+    /* Styliser les détails */
+    .details { 
+        flex: 1;
+    }
 
-}
-
-.form-container button {
-    margin-top: 10px;
-}
-
-/* Ajouter une police en gras léger pour la classe .light-bold */
-.light-bold {
-    font-weight: bold; /* Utilisez une valeur inférieure à 400 pour obtenir une police en gras léger */
-}
+    /* Ajouter un peu d'espace entre les détails */
+    /* .details p { */
+        /* margin-bottom: 5px;
+    } */
 
 
 
+/* 
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh; 
+        min-width: 600px;
+    } */
+
+    /* .form-container form {
+        max-width: 400px; 
+        width: 100%;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    } */
+    /* .form-container p {
+        margin-top: 20px;
+
+    }
+
+    .form-container button {
+        margin-top: 10px;
+    } */
+
+    /* Ajouter une police en gras léger pour la classe .light-bold */
+    /* .light-bold {
+        font-weight: bold; 
+    } */
+
+    /* quiz styling */
+    /* .quiz-list-title{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        font-weight: bolder;
+        margin-bottom: 2rem;
+    } */
+
+    /* .quiz-picture-title {
+    margin-bottom: 1rem;
+    text-decoration:none;
+    color:black;
+    } */
+
+
+    /* images listings items */
+
+    /* .blue-bold {
+        color: blue;
+        font-weight: bold;
+
+    } */
+
+    /* Styles to align radio buttons with text on the same line */
+    /* form label input {
+        display: inline-block; /* Pour que les éléments inline s'alignent sur la même ligne */
+        /* vertical-align: middle; 
+        margin-bottom: 1rem; 
+        margin-top: 1rem;
+    } */
+
+    /* form input[type="radio"] {
+        vertical-align: middle; /* Alignement vertical pour centrer les radio buttons */
+        /* margin-right: 5px; /* Espacement entre le radio button et le texte */
+    /* }  */
+
+    /* .quiz-button {
+        float: right;
+        margin-top: 2rem; 
+
+    } */
+  

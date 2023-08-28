@@ -6,4 +6,7 @@
 <p>Votre note moyenne : {{ average_score }}%</p>
 <p>{{ message }}</p>
 
+<a href="{% url 'quiz-detail' slug=quiz.slug event_number=1 %}" class="btn btn-primary">Retry the quiz</a>
+
+
 {% endblock content %}

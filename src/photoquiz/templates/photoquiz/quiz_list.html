@@ -13,26 +13,27 @@
 
     <div class = "row">
         {% for quiz in quizzes %}
-        <ul>
-        
-        
-        
+        <ul> 
           
         <div class="col-md-6"> 
-            <h5> N° {{ quiz.id  }} </h5> 
+
             <div class="card">
                 <a href="{% url 'quiz-detail' slug=quiz.slug event_number=1 %}">
-                    {{ quiz.title }}
-    
+                    <div>
+                        <h4 class="quiz-picture-title">
+                        {{ quiz.id  }} - {{ quiz.title }}
+                </h4>
+                </div>
                     {% if quiz.events.exists %}
                     <img src="{{ quiz.events.first.image_url }}" alt="Image associée au quiz">
                     {% endif %}
                 </a>
-
             </div>
-            <h4> Quiz of {{ quiz.created_at }}</h4>
-            <h5> Number of pictures : {{ quiz.events.count }}</h5>
-            <p>timing : {{ quiz.time_limit_minutes }} mn</p>
+            <div class="card-body" style="padding:0rem; margin:0%">
+            <p class="card-text"> date : {{ quiz.created_at }}</p>
+            <p class="card-text"> Num of pictures : {{ quiz.events.count }}</p>
+            <p class="card-text">timing : {{ quiz.time_limit_minutes }} mn</p>
+            </div>
            
             
         </div>

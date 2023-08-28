@@ -11,7 +11,7 @@ sys.path.insert(0, django_project_path)
     
 # Lancer les spiders Scrapy à partir du projet Django
 spiders = ['guardian_picture', 'smh_picture', 'cnn_week_pics', 'atlantic_pictures', 'washpost_picture',
-           'letemps_pictures', 'theweek_pictures']
+           'letemps_pictures', 'theweek_pictures', 'spiegel_pic', 'welt_pic']
 processes = []
 
 for spider in spiders:
