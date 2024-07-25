@@ -1,22 +1,16 @@
-
-
 import os
 import sqlite3
 #import django
 
 
 class ApipicturesPipeline:
+    """"Pipeline to register scraped data in the database sqlite3"""
     
     def __init__(self):
-        # Chemin d'accès au dossier 'database' dans le dossier principal
-        #/Users/mac/worldPressPhotoGalery/src/db.sqlite3
-        db_path = '/Users/mac/worldPressPhotoGalery/src/db.sqlite3'
        
+        db_path ='src\db.sqlite3'
         self.con = sqlite3.connect(db_path) 
-        
-
-
-        
+    
         ## Create cursor, used to execute commands
         self.cur = self.con.cursor()
         
