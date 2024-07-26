@@ -1,7 +1,7 @@
 # WorldPressPhotoGallery
 
 <p align="center">
-  <img src="media/worldpressphoto.PNG" alt="worldpressphoto" width="600" height="400">
+  <img src="media/worldpressphoto.PNG" alt="worldpressphoto">
 </p>
 
 **WorldPressPhotoGallery** is a web application designed for photojournalism enthusiasts. It allows users to view, select, and vote for the most striking news images, highlighted for their photojournalistic impact.
