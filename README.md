@@ -36,3 +36,57 @@ These publications source images from major international news agencies, includi
 - Agence France-Presse (AFP)
 - Getty Images
 - European Pressphoto Agency (EPA)
+
+Non je veux que tu m'arranges toute cette partie dans 1 bloc/ensemble de code
+
+
+# Installation and Usage Instructions
+
+## Clone the repository
+In the terminal:  
+```console
+git clone https://github.com/hericlibong/worldPressPhotoGalery
+```
+
+**Navigate to the directory** 
+Change into the directory with:
+```console
+cd worldPressPhotoGalery
+```
+
+**Create a virtual environment**
+```console
+`python -m venv venv`
+```
+
+**Activate the virtual environment**:
+On Windows:
+```console
+`venv\Scripts\activate
+````
+On Unix or MacOS: 
+```console
+`source venv/bin/activate`
+```
+
+**Update the database with the latest images** 
+Execute:
+```console
+`python run_spiders.py`
+```
+ 
+**Navigate to the `src` directory**: 
+Change directories with:
+`cd src`
+
+**Start the Django server**: 
+```console
+`python manage.py runserver`
+```
+
+**Access the application**: 
+After starting the server, open your web browser and go to:
+`http://127.0.0.1:8000/`
+to enjoy browsing and voting on photojournalistic images.
+
+
