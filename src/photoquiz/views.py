@@ -120,7 +120,7 @@ def quiz_final_view(request, slug):
 
     context = {
         'quiz': quiz,
-        'average_score': average_score,
+        'average_score': round(average_score, 2),
         'message': message,
     }
 
