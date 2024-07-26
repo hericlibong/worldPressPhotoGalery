@@ -1,5 +1,9 @@
 # WorldPressPhotoGallery
 
+<p align="center">
+  <img src="media/worldpressphoto.PNG" alt="worldpressphoto" width="600" height="400">
+</p>
+
 **WorldPressPhotoGallery** is a web application designed for photojournalism enthusiasts. It allows users to view, select, and vote for the most striking news images, highlighted for their photojournalistic impact.
 
 Each week, we collect these emblematic images from the weekly selections of major media outlets. This collection is performed through scraping, using Scrapy, to gather the most compelling works of global photojournalism. Subsequently, with Django, we provide an interface where users can interact with these images, assess them, and soon, share their impressions.
