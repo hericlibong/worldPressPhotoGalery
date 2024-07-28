@@ -1,28 +1,14 @@
 import json
-from typing import Any, Dict, Tuple
-#from django.db.models.query import _BaseQuerySet, QuerySet
 from django.http import JsonResponse
-from django.shortcuts import get_object_or_404, redirect, render
+from django.shortcuts import render
 from rest_framework.views import APIView
 from pictures.forms import ImageSearchForm
 from pictures.models import PhotoGallery
-from django.db.models import Count, F, Subquery, OuterRef, Q
-
+from django.db.models import Count, Subquery, OuterRef, Q
 from datetime import datetime                                                                               
-
 from django.views.generic import ListView
 
-from django.contrib.auth.decorators import login_required
-from django.core.paginator import Paginator
-#from django.contrib.humanize.templatetags.humanize import naturaltime
-from django.utils import timezone
-
-
-
-
-
 ### API interface views ###
-
 class RecentPictureAPIView(APIView):
     def get(self, request, format=None):
         pictures = PhotoGallery.objects.order_by('-pubDate')
@@ -59,7 +45,7 @@ class ImageListView(ListView):
     def get_queryset(self): 
         date_str = self.kwargs['date']
         date = datetime.strptime(date_str, '%Y-%m-%d').date()
-        queryset = PhotoGallery.objects.raw(f"SELECT * FROM pictures_photogallery WHERE DATE(pubDate) = %s", [date])
+        queryset = PhotoGallery.objects.raw("SELECT * FROM pictures_photogallery WHERE DATE(pubDate) = %s", [date])
         return queryset
 
     
@@ -164,10 +150,3 @@ def image_search_view(request):
     }
 
     return render(request, 'pictures/image_search.html', context) 
-
-
-
-
-
-
-

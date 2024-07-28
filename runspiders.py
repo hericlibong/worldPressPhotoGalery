@@ -1,7 +1,7 @@
 import subprocess
 
-spiders = ['guardian_picture', 'smh_picture', 'cnn_week_pics', 'atlantic_pictures', 'washpost_picture', 
-           'letemps_pictures', 'theweek_pictures']
+spiders = ['guardian_picture', 'smh_picture', 'cnn_week_pics', 'atlantic_pictures',  
+         'theweek_pictures']
 
 processes = []
 for spider in spiders:

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>gallery\urls.py - flake8 annotated source</title>
+      <meta http-equiv="Content-Type" value="text/html; charset=UTF-8">
+      <link rel="stylesheet" href="styles.css">
+   </head>
+   <body>
+      <div id="masthead" class="sev-2"></div>
+      <div id="page">
+         <h1>
+            <a href="gallery.urls.report.html">
+               <img src="back.svg" alt="&#x2B05;">
+               gallery\urls.py source
+            </a>
+         </h1>
+
+         <div id="doc">
+            <div id="l1"
+               class="code sev- "><tt><i>1</i> <span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span></tt>
+            </div>
+            <div id="l2"
+               class="code sev- "><tt><i>2</i> <span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span><span class="p">,</span> <span class="n">include</span></tt>
+            </div>
+            <div id="l3"
+               class="code sev- "><tt><i>3</i> <span class="kn">from</span> <span class="nn">pictures.views</span> <span class="kn">import</span> <span class="n">RecentPictureAPIView</span><span class="p">,</span> <span class="n">DateListView</span><span class="p">,</span> <span class="n">ImageListView</span><span class="p">,</span> <span class="n">ImageByRatingView</span><span class="p">,</span> <span class="n">statistics_views</span><span class="p">,</span> <span class="n">image_search_view</span><span class="p">,</span> <span class="n">ImageByMediaView</span></tt>
+            </div>
+            <div id="l4"
+               class="code sev-2  le">
+               <ul class="violations">
+               
+                  <li>
+                     <span class="count sev-2">
+                        E501
+                     </span>
+                     Line too long (150 > 79 characters)</li>
+               
+               </ul><tt><i>4</i> <span class="kn">from</span> <span class="nn">authentication.views</span> <span class="kn">import</span> <span class="n">logout_user</span><span class="p">,</span> <span class="n">signup_page</span></tt>
+            </div>
+            <div id="l5"
+               class="code sev- "><tt><i>5</i> <span class="kn">from</span> <span class="nn">photoquiz.views</span> <span class="kn">import</span> <span class="n">QuizListView</span><span class="p">,</span> <span class="n">quiz_detail_view</span><span class="p">,</span> <span class="n">quiz_final_view</span></tt>
+            </div>
+            <div id="l6"
+               class="code sev- "><tt><i>6</i> <span class="kn">from</span> <span class="nn">django.contrib.auth.views</span> <span class="kn">import</span> <span class="n">LoginView</span></tt>
+            </div>
+            <div id="l7"
+               class="code sev- "><tt><i>7</i> &nbsp;</tt>
+            </div>
+            <div id="l8"
+               class="code sev- "><tt><i>8</i> &nbsp;</tt>
+            </div>
+            <div id="l9"
+               class="code sev- "><tt><i>9</i> <span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span></tt>
+            </div>
+            <div id="l10"
+               class="code sev- "><tt><i>10</i>     <span class="n">path</span><span class="p">(</span><span class="s1">&#39;admin/&#39;</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span></tt>
+            </div>
+            <div id="l11"
+               class="code sev- "><tt><i>11</i>     <span class="n">path</span><span class="p">(</span><span class="s1">&#39;api/recent-pictures/&#39;</span><span class="p">,</span> <span class="n">RecentPictureAPIView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;recent_pictures&#39;</span><span class="p">),</span></tt>
+            </div>
+            <div id="l12"
+               class="code sev-2  le">
+               <ul class="violations">
+               
+                  <li>
+                     <span class="count sev-2">
+                        E251
+                     </span>
+                     Unexpected spaces around keyword / parameter equals (in 2 places)</li>
+               
+                  <li>
+                     <span class="count sev-2">
+                        E501
+                     </span>
+                     Line too long (91 > 79 characters)</li>
+               
+               </ul><tt><i>12</i>     <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">DateListView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;home&#39;</span><span class="p">),</span></tt>
+            </div>
+            <div id="l13"
+               class="code sev- "><tt><i>13</i>     <span class="n">path</span><span class="p">(</span><span class="s1">&#39;images/&lt;str:date&gt;/&#39;</span><span class="p">,</span> <span class="n">ImageListView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;image_list_by_date&#39;</span><span class="p">),</span></tt>
+            </div>
+            <div id="l14"
+               class="code sev-2  le">
+               <ul class="violations">
+               
+                  <li>
+                     <span class="count sev-2">
+                        E501
+                     </span>
+                     Line too long (83 > 79 characters)</li>
+               
+               </ul><tt><i>14</i>     <span class="n">path</span><span class="p">(</span><span class="s1">&#39;ratings/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s1">&#39;star_ratings.urls&#39;</span><span class="p">,</span> <span class="n">namespace</span><span class="o">=</span><span class="s1">&#39;ratings&#39;</span><span class="p">)),</span></tt>
+            </div>
+            <div id="l15"
+               class="code sev- "><tt><i>15</i>     <span class="n">path</span><span class="p">(</span><span class="s1">&#39;login/&#39;</span><span class="p">,</span> <span class="n">LoginView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(</span></tt>
+            </div>
+            <div id="l16"
+               class="code sev- "><tt><i>16</i>         <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;authentication/login.html&#39;</span><span class="p">,</span></tt>
+            </div>
+            <div id="l17"
+               class="code sev-2  le">
+               <ul class="violations">
+               
+                  <li>
+                     <span class="count sev-2">
+                        E251
+                     </span>
+                     Unexpected spaces around keyword / parameter equals (in 2 places)</li>
+               
+               </ul><tt><i>17</i>         <span class="n">redirect_authenticated_user</span> <span class="o">=</span><span class="kc">True</span><span class="p">),</span></tt>
+            </div>
+            <div id="l18"
+               class="code sev-2  le">
+               <ul class="violations">
+               
+                  <li>
+                     <span class="count sev-2">
+                        E251
+                     </span>
+                     Unexpected spaces around keyword / parameter equals</li>
+               
+               </ul><tt><i>18</i>         <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;login&#39;</span><span class="p">),</span></tt>
+            </div>
+            <div id="l19"
+               class="code sev-2  le">
+               <ul class="violations">
+               
+                  <li>
+                     <span class="count sev-2">
+                        E251
+                     </span>
+                     Unexpected spaces around keyword / parameter equals (in 2 places)</li>
+               
+               </ul><tt><i>19</i>     <span class="n">path</span><span class="p">(</span><span class="s1">&#39;logout/&#39;</span><span class="p">,</span> <span class="n">logout_user</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;logout&#39;</span><span class="p">),</span></tt>
+            </div>
+            <div id="l20"
+               class="code sev-2  le">
+               <ul class="violations">
+               
+                  <li>
+                     <span class="count sev-2">
+                        E251
+                     </span>
+                     Unexpected spaces around keyword / parameter equals (in 2 places)</li>
+               
+               </ul><tt><i>20</i>     <span class="n">path</span><span class="p">(</span><span class="s1">&#39;signup/&#39;</span><span class="p">,</span> <span class="n">signup_page</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;signup&#39;</span><span class="p">),</span></tt>
+            </div>
+            <div id="l21"
+               class="code sev-2  le">
+               <ul class="violations">
+               
+                  <li>
+                     <span class="count sev-2">
+                        E251
+                     </span>
+                     Unexpected spaces around keyword / parameter equals (in 2 places)</li>
+               
+               </ul><tt><i>21</i>     <span class="n">path</span><span class="p">(</span><span class="s1">&#39;images_ratings/&#39;</span><span class="p">,</span> <span class="n">ImageByRatingView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;images-ratings&#39;</span><span class="p">),</span></tt>
+            </div>
+            <div id="l22"
+               class="code sev-2  le">
+               <ul class="violations">
+               
+                  <li>
+                     <span class="count sev-2">
+                        E501
+                     </span>
+                     Line too long (80 > 79 characters)</li>
+               
+               </ul><tt><i>22</i>     <span class="n">path</span><span class="p">(</span><span class="s1">&#39;home/stats/&#39;</span><span class="p">,</span> <span class="n">statistics_views</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;stats&#39;</span> <span class="p">),</span></tt>
+            </div>
+            <div id="l23"
+               class="code sev-2  le">
+               <ul class="violations">
+               
+                  <li>
+                     <span class="count sev-2">
+                        E251
+                     </span>
+                     Unexpected spaces around keyword / parameter equals (in 2 places)</li>
+               
+                  <li>
+                     <span class="count sev-2">
+                        E202
+                     </span>
+                     Whitespace before ')'</li>
+               
+               </ul><tt><i>23</i>     <span class="n">path</span><span class="p">(</span><span class="s1">&#39;search/&#39;</span><span class="p">,</span> <span class="n">image_search_view</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;image-search&#39;</span><span class="p">),</span></tt>
+            </div>
+            <div id="l24"
+               class="code sev- "><tt><i>24</i>     <span class="n">path</span><span class="p">(</span><span class="s1">&#39;image_by_media/&#39;</span><span class="p">,</span> <span class="n">ImageByMediaView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;image-media&#39;</span><span class="p">),</span></tt>
+            </div>
+            <div id="l25"
+               class="code sev-2  le">
+               <ul class="violations">
+               
+                  <li>
+                     <span class="count sev-2">
+                        E251
+                     </span>
+                     Unexpected spaces around keyword / parameter equals (in 2 places)</li>
+               
+               </ul><tt><i>25</i>     <span class="n">path</span><span class="p">(</span><span class="s1">&#39;quiz/&lt;str:slug&gt;/&lt;int:event_number&gt;/&#39;</span><span class="p">,</span> <span class="n">quiz_detail_view</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;quiz-detail&#39;</span><span class="p">),</span></tt>
+            </div>
+            <div id="l26"
+               class="code sev-2  le">
+               <ul class="violations">
+               
+                  <li>
+                     <span class="count sev-2">
+                        E251
+                     </span>
+                     Unexpected spaces around keyword / parameter equals (in 2 places)</li>
+               
+                  <li>
+                     <span class="count sev-2">
+                        E501
+                     </span>
+                     Line too long (88 > 79 characters)</li>
+               
+               </ul><tt><i>26</i>     <span class="n">path</span><span class="p">(</span><span class="s1">&#39;quiz/&#39;</span><span class="p">,</span> <span class="n">QuizListView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;quiz-list&#39;</span><span class="p">),</span></tt>
+            </div>
+            <div id="l27"
+               class="code sev- "><tt><i>27</i>     <span class="n">path</span><span class="p">(</span><span class="s1">&#39;quiz_score/&lt;str:slug&gt;/&#39;</span><span class="p">,</span> <span class="n">quiz_final_view</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;final-score&#39;</span><span class="p">)</span></tt>
+            </div>
+            <div id="l28"
+               class="code sev-2  le">
+               <ul class="violations">
+               
+                  <li>
+                     <span class="count sev-2">
+                        E251
+                     </span>
+                     Unexpected spaces around keyword / parameter equals (in 2 places)</li>
+               
+               </ul><tt><i>28</i>     </tt>
+            </div>
+            <div id="l29"
+               class="code sev-2  le">
+               <ul class="violations">
+               
+                  <li>
+                     <span class="count sev-2">
+                        W293
+                     </span>
+                     Blank line contains whitespace</li>
+               
+               </ul><tt><i>29</i> &nbsp;</tt>
+            </div>
+            <div id="l30"
+               class="code sev- "><tt><i>30</i> <span class="p">]</span></tt>
+            </div>
+            
+         </div>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>flake8 violations: pictures\views.py</title>
+      <meta http-equiv="Content-Type" value="text/html; charset=UTF-8">
+      <link rel="stylesheet" href="styles.css">
+<script>
+function bindHandler(link) {
+   var code = link.getAttribute('data-code');
+   var key = location.pathname + '#' + code;
+
+   var ul = link.parentNode.querySelector('.details');
+   if (sessionStorage[key] != 'open') {
+      ul.style.display = 'none';
+   }
+   link.addEventListener('click', function (event) {
+      if (!ul.style.display || ul.style.display == 'none') {
+         ul.style.display = 'block';
+         sessionStorage[key] = 'open';
+      } else {
+         ul.style.display = 'none';
+         sessionStorage[key] = 'closed';
+      }
+   });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+   var links = document.querySelectorAll('#index > li > a');
+   for (var i = 0; i < links.length; i++) {
+      bindHandler(links[i]);
+   }
+});
+</script>
+   </head>
+   <body>
+      <div id="masthead" class="sev-2"></div>
+      <div id="page">
+         <p id="srclink">
+            <a title="View full annotated source"
+               href="pictures.views.source.html">
+               <img src="file.svg" alt="&#x2261;">
+            </a></p>
+         <h1>
+            <a href="index.html">
+               <img src="back.svg" alt="&#x2B05;">
+               pictures\views.py
+            </a>
+         </h1>
+
+         <ul id="index">
+         
+         <li>
+            <a data-code="E501">
+               <span class="count sev-2">
+                  12
+               </span>
+               <strong>E501:</strong> line too long (127 > 79 characters)
+               
+                  (and 10 similar)
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <p>Line too long (127 > 79 characters):</p>
+               
+               <a href="pictures.views.source.html#l30">
+                  <tt><i>30</i>         <span class="n">date_counts</span> <span class="o">=</span> <span class="n">PhotoGallery</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;-pubDate&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s1">&#39;pubDate&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">total_photos</span><span class="o">=</span><span class="n">Count</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">))</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (116 > 79 characters):</p>
+               
+               <a href="pictures.views.source.html#l31">
+                  <tt><i>31</i>         <span class="n">first_images</span> <span class="o">=</span> <span class="n">PhotoGallery</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">pubDate</span><span class="o">=</span><span class="n">OuterRef</span><span class="p">(</span><span class="s1">&#39;pubDate&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s1">&#39;picture&#39;</span><span class="p">)[:</span><span class="mi">1</span><span class="p">]</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (115 > 79 characters):</p>
+               
+               <a href="pictures.views.source.html#l48">
+                  <tt><i>48</i>         <span class="n">queryset</span> <span class="o">=</span> <span class="n">PhotoGallery</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">raw</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM pictures_photogallery WHERE DATE(pubDate) = </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">date</span><span class="p">])</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (95 > 79 characters):</p>
+               
+               <a href="pictures.views.source.html#l71">
+                  <tt><i>71</i>         <span class="k">return</span> <span class="n">PhotoGallery</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">ratings__isnull</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;-ratings__average&#39;</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (83 > 79 characters):</p>
+               
+               <a href="pictures.views.source.html#l78">
+                  <tt><i>78</i>     <span class="n">media_counts</span> <span class="o">=</span> <span class="n">PhotoGallery</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s1">&#39;media&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">count</span><span class="o">=</span><span class="n">Count</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">))</span> </tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (90 > 79 characters):</p>
+               
+               <a href="pictures.views.source.html#l79">
+                  <tt><i>79</i>     <span class="n">media_data</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;media&#39;</span><span class="p">:</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;media&#39;</span><span class="p">],</span> <span class="s1">&#39;count&#39;</span><span class="p">:</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]}</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">media_counts</span><span class="p">]</span> </tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (105 > 79 characters):</p>
+               
+               <a href="pictures.views.source.html#l107">
+                  <tt><i>107</i>             <span class="n">context</span><span class="p">[</span><span class="s1">&#39;images_by_media_count&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">images_by_media</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>  <span class="c1"># Ajoutez cette ligne au contexte</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (107 > 79 characters):</p>
+               
+               <a href="pictures.views.source.html#l109">
+                  <tt><i>109</i>         <span class="n">available_media</span> <span class="o">=</span> <span class="n">PhotoGallery</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;media&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">values_list</span><span class="p">(</span><span class="s1">&#39;media&#39;</span><span class="p">,</span> <span class="n">flat</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (82 > 79 characters):</p>
+               
+               <a href="pictures.views.source.html#l129">
+                  <tt><i>129</i>         <span class="c1">#     # Utilisez le champ de recherche sélectionné pour filtrer les images</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (82 > 79 characters):</p>
+               
+               <a href="pictures.views.source.html#l136">
+                  <tt><i>136</i>                 <span class="c1"># Utilisation de Q pour rechercher dans tous les champs pertinents</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (182 > 79 characters):</p>
+               
+               <a href="pictures.views.source.html#l137">
+                  <tt><i>137</i>                 <span class="n">filter_q</span> <span class="o">=</span> <span class="n">Q</span><span class="p">(</span><span class="n">caption__icontains</span><span class="o">=</span><span class="n">keyword</span><span class="p">)</span> <span class="o">|</span> <span class="n">Q</span><span class="p">(</span><span class="n">media__icontains</span><span class="o">=</span><span class="n">keyword</span><span class="p">)</span> <span class="o">|</span> <span class="n">Q</span><span class="p">(</span><span class="n">credits__icontains</span><span class="o">=</span><span class="n">keyword</span><span class="p">)</span> <span class="o">|</span> <span class="n">Q</span><span class="p">(</span><span class="n">author__icontains</span><span class="o">=</span><span class="n">keyword</span><span class="p">)</span> <span class="o">|</span> <span class="n">Q</span><span class="p">(</span><span class="n">location__icontains</span><span class="o">=</span><span class="n">keyword</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (87 > 79 characters):</p>
+               
+               <a href="pictures.views.source.html#l140">
+                  <tt><i>140</i>                 <span class="c1"># Utilisation du champ de recherche sélectionné pour filtrer les images</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="W293">
+               <span class="count sev-2">
+                  12
+               </span>
+               <strong>W293:</strong> blank line contains whitespace
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="pictures.views.source.html#l34">
+                  <tt><i>34</i>     </tt>
+               </a>
+            </li><li>
+               
+               <a href="pictures.views.source.html#l36">
+                  <tt><i>36</i>  </tt>
+               </a>
+            </li><li>
+               
+               <a href="pictures.views.source.html#l51">
+                  <tt><i>51</i>     </tt>
+               </a>
+            </li><li>
+               
+               <a href="pictures.views.source.html#l52">
+                  <tt><i>52</i>     </tt>
+               </a>
+            </li><li>
+               
+               <a href="pictures.views.source.html#l60">
+                  <tt><i>60</i>     </tt>
+               </a>
+            </li><li>
+               
+               <a href="pictures.views.source.html#l72">
+                  <tt><i>72</i>         </tt>
+               </a>
+            </li><li>
+               
+               <a href="pictures.views.source.html#l80">
+                  <tt><i>80</i>     </tt>
+               </a>
+            </li><li>
+               
+               <a href="pictures.views.source.html#l93">
+                  <tt><i>93</i>     </tt>
+               </a>
+            </li><li>
+               
+               <a href="pictures.views.source.html#l100">
+                  <tt><i>100</i>     </tt>
+               </a>
+            </li><li>
+               
+               <a href="pictures.views.source.html#l104">
+                  <tt><i>104</i>         </tt>
+               </a>
+            </li><li>
+               
+               <a href="pictures.views.source.html#l108">
+                  <tt><i>108</i>             </tt>
+               </a>
+            </li><li>
+               
+               <a href="pictures.views.source.html#l133">
+                  <tt><i>133</i>         </tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="W291">
+               <span class="count sev-2">
+                  10
+               </span>
+               <strong>W291:</strong> trailing whitespace
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="pictures.views.source.html#l8">
+                  <tt><i>8</i> <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>                                                                               </tt>
+               </a>
+            </li><li>
+               
+               <a href="pictures.views.source.html#l25">
+                  <tt><i>25</i>     <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;pictures/date_list.html&#39;</span> </tt>
+               </a>
+            </li><li>
+               
+               <a href="pictures.views.source.html#l41">
+                  <tt><i>41</i>     <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;pictures/images_list.html&#39;</span> </tt>
+               </a>
+            </li><li>
+               
+               <a href="pictures.views.source.html#l45">
+                  <tt><i>45</i>     <span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> </tt>
+               </a>
+            </li><li>
+               
+               <a href="pictures.views.source.html#l78">
+                  <tt><i>78</i>     <span class="n">media_counts</span> <span class="o">=</span> <span class="n">PhotoGallery</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s1">&#39;media&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">count</span><span class="o">=</span><span class="n">Count</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">))</span> </tt>
+               </a>
+            </li><li>
+               
+               <a href="pictures.views.source.html#l79">
+                  <tt><i>79</i>     <span class="n">media_data</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;media&#39;</span><span class="p">:</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;media&#39;</span><span class="p">],</span> <span class="s1">&#39;count&#39;</span><span class="p">:</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]}</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">media_counts</span><span class="p">]</span> </tt>
+               </a>
+            </li><li>
+               
+               <a href="pictures.views.source.html#l83">
+                  <tt><i>83</i>     <span class="p">}</span> </tt>
+               </a>
+            </li><li>
+               
+               <a href="pictures.views.source.html#l84">
+                  <tt><i>84</i>     <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;pictures/stats.html&#39;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span> </tt>
+               </a>
+            </li><li>
+               
+               <a href="pictures.views.source.html#l138">
+                  <tt><i>138</i>                 <span class="n">images</span> <span class="o">=</span> <span class="n">PhotoGallery</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">filter_q</span><span class="p">)</span> </tt>
+               </a>
+            </li><li>
+               
+               <a href="pictures.views.source.html#l152">
+                  <tt><i>152</i>     <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;pictures/image_search.html&#39;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span> </tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="E303">
+               <span class="count sev-2">
+                  6
+               </span>
+               <strong>E303:</strong> too many blank lines (5)
+               
+                  (and 2 similar)
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <p>Too many blank lines (5):</p>
+               
+               <a href="pictures.views.source.html#l39">
+                  <tt><i>39</i> <span class="k">class</span> <span class="nc">ImageListView</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Too many blank lines (3):</p>
+               
+               <a href="pictures.views.source.html#l53">
+                  <tt><i>53</i>     <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Too many blank lines (4):</p>
+               
+               <a href="pictures.views.source.html#l64">
+                  <tt><i>64</i> <span class="k">class</span> <span class="nc">ImageByRatingView</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Too many blank lines (3):</p>
+               
+               <a href="pictures.views.source.html#l75">
+                  <tt><i>75</i> <span class="c1"># statistics views ###</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Too many blank lines (3):</p>
+               
+               <a href="pictures.views.source.html#l88">
+                  <tt><i>88</i> <span class="k">class</span> <span class="nc">ImageByMediaView</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Too many blank lines (5):</p>
+               
+               <a href="pictures.views.source.html#l117">
+                  <tt><i>117</i> <span class="c1"># browse pictures dropdown menu</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="E231">
+               <span class="count sev-2">
+                  3
+               </span>
+               <strong>E231:</strong> missing whitespace after ':'
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <p>Missing whitespace after ':' (in 2 places):</p>
+               
+               <a href="pictures.views.source.html#l79">
+                  <tt><i>79</i>     <span class="n">media_data</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;media&#39;</span><span class="p">:</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;media&#39;</span><span class="p">],</span> <span class="s1">&#39;count&#39;</span><span class="p">:</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]}</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">media_counts</span><span class="p">]</span> </tt>
+               </a>
+            </li><li>
+               
+               <p>Missing whitespace after ':':</p>
+               
+               <a href="pictures.views.source.html#l149">
+                  <tt><i>149</i>         <span class="s1">&#39;results_counts&#39;</span><span class="p">:</span><span class="n">results_counts</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="E302">
+               <span class="count sev-2">
+                  3
+               </span>
+               <strong>E302:</strong> expected 2 blank lines, found 1
+               
+                  (and 2 similar)
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <p>Expected 2 blank lines, found 1:</p>
+               
+               <a href="pictures.views.source.html#l12">
+                  <tt><i>12</i> <span class="k">class</span> <span class="nc">RecentPictureAPIView</span><span class="p">(</span><span class="n">APIView</span><span class="p">):</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Expected 2 blank lines, found 3:</p>
+               
+               <a href="pictures.views.source.html#l77">
+                  <tt><i>77</i> <span class="k">def</span> <span class="nf">statistics_views</span><span class="p">(</span><span class="n">request</span><span class="p">):</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Expected 2 blank lines, found 5:</p>
+               
+               <a href="pictures.views.source.html#l119">
+                  <tt><i>119</i> <span class="k">def</span> <span class="nf">image_search_view</span><span class="p">(</span><span class="n">request</span><span class="p">):</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="E251">
+               <span class="count sev-2">
+                  2
+               </span>
+               <strong>E251:</strong> unexpected spaces around keyword / parameter equals
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <p>Unexpected spaces around keyword / parameter equals (in 2 places):</p>
+               
+               <a href="pictures.views.source.html#l97">
+                  <tt><i>97</i>             <span class="k">return</span> <span class="n">PhotoGallery</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">media</span> <span class="o">=</span> <span class="n">selected_media</span><span class="p">)</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="E266">
+               <span class="count sev-2">
+                  2
+               </span>
+               <strong>E266:</strong> too many leading '#' for block comment
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="pictures.views.source.html#l11">
+                  <tt><i>11</i> <span class="c1">### API interface views ###</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="pictures.views.source.html#l21">
+                  <tt><i>21</i> <span class="c1">#### Class based views ####</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="E122">
+               <span class="count sev-2">
+                  1
+               </span>
+               <strong>E122:</strong> continuation line missing indentation or outdented
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="pictures.views.source.html#l16">
+                  <tt><i>16</i>         <span class="s1">&#39;pictures&#39;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">pictures</span><span class="o">.</span><span class="n">values</span><span class="p">())</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="E203">
+               <span class="count sev-2">
+                  1
+               </span>
+               <strong>E203:</strong> whitespace before ':'
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="pictures.views.source.html#l98">
+                  <tt><i>98</i>         <span class="k">else</span> <span class="p">:</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="E261">
+               <span class="count sev-2">
+                  1
+               </span>
+               <strong>E261:</strong> at least two spaces before inline comment
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="pictures.views.source.html#l43">
+                  <tt><i>43</i>     <span class="n">paginate_by</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># Nombre d&#39;objects/images par page</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         </ul>
+      </div>
+   </body>
+</html>

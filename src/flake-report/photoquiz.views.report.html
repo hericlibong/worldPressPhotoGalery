@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>flake8 violations: photoquiz\views.py</title>
+      <meta http-equiv="Content-Type" value="text/html; charset=UTF-8">
+      <link rel="stylesheet" href="styles.css">
+<script>
+function bindHandler(link) {
+   var code = link.getAttribute('data-code');
+   var key = location.pathname + '#' + code;
+
+   var ul = link.parentNode.querySelector('.details');
+   if (sessionStorage[key] != 'open') {
+      ul.style.display = 'none';
+   }
+   link.addEventListener('click', function (event) {
+      if (!ul.style.display || ul.style.display == 'none') {
+         ul.style.display = 'block';
+         sessionStorage[key] = 'open';
+      } else {
+         ul.style.display = 'none';
+         sessionStorage[key] = 'closed';
+      }
+   });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+   var links = document.querySelectorAll('#index > li > a');
+   for (var i = 0; i < links.length; i++) {
+      bindHandler(links[i]);
+   }
+});
+</script>
+   </head>
+   <body>
+      <div id="masthead" class="sev-1"></div>
+      <div id="page">
+         <p id="srclink">
+            <a title="View full annotated source"
+               href="photoquiz.views.source.html">
+               <img src="file.svg" alt="&#x2261;">
+            </a></p>
+         <h1>
+            <a href="index.html">
+               <img src="back.svg" alt="&#x2B05;">
+               photoquiz\views.py
+            </a>
+         </h1>
+
+         <ul id="index">
+         
+         <li>
+            <a data-code="F401">
+               <span class="count sev-1">
+                  3
+               </span>
+               <strong>F401:</strong> 'typing.Any' imported but unused
+               
+                  (and 2 similar)
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <p>'typing.Any' imported but unused:</p>
+               
+               <a href="photoquiz.views.source.html#l1">
+                  <tt><i>1</i> <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span></tt>
+               </a>
+            </li><li>
+               
+               <p>'typing.Dict' imported but unused:</p>
+               
+               <a href="photoquiz.views.source.html#l1">
+                  <tt><i>1</i> <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span></tt>
+               </a>
+            </li><li>
+               
+               <p>'django.shortcuts.redirect' imported but unused:</p>
+               
+               <a href="photoquiz.views.source.html#l2">
+                  <tt><i>2</i> <span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">redirect</span><span class="p">,</span> <span class="n">render</span><span class="p">,</span> <span class="n">get_object_or_404</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="F811">
+               <span class="count sev-1">
+                  1
+               </span>
+               <strong>F811:</strong> redefinition of unused 'Quiz' from line 3
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="photoquiz.views.source.html#l7">
+                  <tt><i>7</i> <span class="kn">from</span> <span class="nn">photoquiz.models</span> <span class="kn">import</span> <span class="n">Quiz</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="W293">
+               <span class="count sev-2">
+                  17
+               </span>
+               <strong>W293:</strong> blank line contains whitespace
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="photoquiz.views.source.html#l16">
+                  <tt><i>16</i>     </tt>
+               </a>
+            </li><li>
+               
+               <a href="photoquiz.views.source.html#l19">
+                  <tt><i>19</i>     </tt>
+               </a>
+            </li><li>
+               
+               <a href="photoquiz.views.source.html#l23">
+                  <tt><i>23</i>         </tt>
+               </a>
+            </li><li>
+               
+               <a href="photoquiz.views.source.html#l28">
+                  <tt><i>28</i>                 </tt>
+               </a>
+            </li><li>
+               
+               <a href="photoquiz.views.source.html#l31">
+                  <tt><i>31</i>                 </tt>
+               </a>
+            </li><li>
+               
+               <a href="photoquiz.views.source.html#l32">
+                  <tt><i>32</i>     </tt>
+               </a>
+            </li><li>
+               
+               <a href="photoquiz.views.source.html#l33">
+                  <tt><i>33</i>     </tt>
+               </a>
+            </li><li>
+               
+               <a href="photoquiz.views.source.html#l41">
+                  <tt><i>41</i>     </tt>
+               </a>
+            </li><li>
+               
+               <a href="photoquiz.views.source.html#l42">
+                  <tt><i>42</i>     </tt>
+               </a>
+            </li><li>
+               
+               <a href="photoquiz.views.source.html#l46">
+                  <tt><i>46</i>     </tt>
+               </a>
+            </li><li>
+               
+               <a href="photoquiz.views.source.html#l51">
+                  <tt><i>51</i>     </tt>
+               </a>
+            </li><li>
+               
+               <a href="photoquiz.views.source.html#l52">
+                  <tt><i>52</i>     </tt>
+               </a>
+            </li><li>
+               
+               <a href="photoquiz.views.source.html#l64">
+                  <tt><i>64</i>                 </tt>
+               </a>
+            </li><li>
+               
+               <a href="photoquiz.views.source.html#l68">
+                  <tt><i>68</i>                 </tt>
+               </a>
+            </li><li>
+               
+               <a href="photoquiz.views.source.html#l81">
+                  <tt><i>81</i>     </tt>
+               </a>
+            </li><li>
+               
+               <a href="photoquiz.views.source.html#l100">
+                  <tt><i>100</i>     </tt>
+               </a>
+            </li><li>
+               
+               <a href="photoquiz.views.source.html#l104">
+                  <tt><i>104</i>     </tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="E303">
+               <span class="count sev-2">
+                  6
+               </span>
+               <strong>E303:</strong> too many blank lines (3)
+               
+                  (and 2 similar)
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <p>Too many blank lines (3):</p>
+               
+               <a href="photoquiz.views.source.html#l12">
+                  <tt><i>12</i> <span class="k">class</span> <span class="nc">QuizListView</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Too many blank lines (6):</p>
+               
+               <a href="photoquiz.views.source.html#l37">
+                  <tt><i>37</i> <span class="nd">@login_required</span><span class="p">(</span><span class="n">login_url</span><span class="o">=</span><span class="s1">&#39;login&#39;</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Too many blank lines (2):</p>
+               
+               <a href="photoquiz.views.source.html#l43">
+                  <tt><i>43</i>     <span class="c1"># Réinitialisation du score si l&#39;utilisateur accède à la première question</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Too many blank lines (2):</p>
+               
+               <a href="photoquiz.views.source.html#l53">
+                  <tt><i>53</i>     <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Too many blank lines (2):</p>
+               
+               <a href="photoquiz.views.source.html#l82">
+                  <tt><i>82</i>     <span class="n">context</span> <span class="o">=</span> <span class="p">{</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Too many blank lines (2):</p>
+               
+               <a href="photoquiz.views.source.html#l111">
+                  <tt><i>111</i>     <span class="c1"># Messages en fonction de la note moyenne</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="E501">
+               <span class="count sev-2">
+                  6
+               </span>
+               <strong>E501:</strong> line too long (99 > 79 characters)
+               
+                  (and 5 similar)
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <p>Line too long (99 > 79 characters):</p>
+               
+               <a href="photoquiz.views.source.html#l26">
+                  <tt><i>26</i>                 <span class="n">event</span> <span class="o">=</span> <span class="n">quiz</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>  <span class="c1"># Prenez la première instance d&#39;événement liée au quiz</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (107 > 79 characters):</p>
+               
+               <a href="photoquiz.views.source.html#l61">
+                  <tt><i>61</i>                 <span class="n">correct_answer_text</span> <span class="o">=</span> <span class="n">selected_answer</span><span class="o">.</span><span class="n">correct_answer_text</span>  <span class="c1"># Légende de la réponse correcte</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (106 > 79 characters):</p>
+               
+               <a href="photoquiz.views.source.html#l72">
+                  <tt><i>72</i>                 <span class="n">correct_answer</span> <span class="o">=</span> <span class="n">current_event</span><span class="o">.</span><span class="n">answers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">is_correct</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Obtenir la réponse correcte</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (86 > 79 characters):</p>
+               
+               <a href="photoquiz.views.source.html#l73">
+                  <tt><i>73</i>                 <span class="n">current_event</span><span class="o">.</span><span class="n">correct_answer_text</span> <span class="o">=</span> <span class="n">correct_answer</span><span class="o">.</span><span class="n">correct_answer_text</span> </tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (89 > 79 characters):</p>
+               
+               <a href="photoquiz.views.source.html#l75">
+                  <tt><i>75</i>             <span class="n">current_event</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>  <span class="c1"># Enregistrer les modifications dans la base de données    </span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (91 > 79 characters):</p>
+               
+               <a href="photoquiz.views.source.html#l108">
+                  <tt><i>108</i>     <span class="n">average_score</span> <span class="o">=</span> <span class="p">(</span><span class="n">correct_answers</span> <span class="o">/</span> <span class="n">total_questions</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span> <span class="k">if</span> <span class="n">total_questions</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="E231">
+               <span class="count sev-2">
+                  5
+               </span>
+               <strong>E231:</strong> missing whitespace after ':'
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="photoquiz.views.source.html#l83">
+                  <tt><i>83</i>         <span class="s1">&#39;quiz&#39;</span><span class="p">:</span><span class="n">quiz</span><span class="p">,</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="photoquiz.views.source.html#l85">
+                  <tt><i>85</i>         <span class="s1">&#39;current_event&#39;</span><span class="p">:</span><span class="n">current_event</span><span class="p">,</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="photoquiz.views.source.html#l86">
+                  <tt><i>86</i>         <span class="s1">&#39;form&#39;</span><span class="p">:</span><span class="n">form</span><span class="p">,</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="photoquiz.views.source.html#l87">
+                  <tt><i>87</i>         <span class="s1">&#39;event_page&#39;</span><span class="p">:</span><span class="n">event_page</span><span class="p">,</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="photoquiz.views.source.html#l88">
+                  <tt><i>88</i>         <span class="s1">&#39;total_pages&#39;</span><span class="p">:</span><span class="n">paginator</span><span class="o">.</span><span class="n">num_pages</span><span class="p">,</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="E251">
+               <span class="count sev-2">
+                  4
+               </span>
+               <strong>E251:</strong> unexpected spaces around keyword / parameter equals
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <p>Unexpected spaces around keyword / parameter equals (in 2 places):</p>
+               
+               <a href="photoquiz.views.source.html#l47">
+                  <tt><i>47</i>     <span class="n">paginator</span> <span class="o">=</span> <span class="n">Paginator</span><span class="p">(</span><span class="n">events</span><span class="p">,</span> <span class="n">per_page</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Unexpected spaces around keyword / parameter equals (in 2 places):</p>
+               
+               <a href="photoquiz.views.source.html#l54">
+                  <tt><i>54</i>         <span class="n">form</span> <span class="o">=</span> <span class="n">QuizForm</span><span class="p">(</span><span class="n">event_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">current_event</span><span class="p">],</span> <span class="n">data</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">)</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="W291">
+               <span class="count sev-2">
+                  4
+               </span>
+               <strong>W291:</strong> trailing whitespace
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="photoquiz.views.source.html#l29">
+                  <tt><i>29</i>         <span class="n">context</span><span class="p">[</span><span class="s1">&#39;event_images&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">event_images</span>       </tt>
+               </a>
+            </li><li>
+               
+               <a href="photoquiz.views.source.html#l67">
+                  <tt><i>67</i>                 <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">&#39;correct_answers&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>   </tt>
+               </a>
+            </li><li>
+               
+               <a href="photoquiz.views.source.html#l73">
+                  <tt><i>73</i>                 <span class="n">current_event</span><span class="o">.</span><span class="n">correct_answer_text</span> <span class="o">=</span> <span class="n">correct_answer</span><span class="o">.</span><span class="n">correct_answer_text</span> </tt>
+               </a>
+            </li><li>
+               
+               <a href="photoquiz.views.source.html#l75">
+                  <tt><i>75</i>             <span class="n">current_event</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>  <span class="c1"># Enregistrer les modifications dans la base de données    </span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="E265">
+               <span class="count sev-2">
+                  1
+               </span>
+               <strong>E265:</strong> block comment should start with '# '
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="photoquiz.views.source.html#l106">
+                  <tt><i>106</i>     <span class="c1">#average_score = quiz.calculate_average_score(correct_answers)</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="W391">
+               <span class="count sev-2">
+                  1
+               </span>
+               <strong>W391:</strong> blank line at end of file
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="photoquiz.views.source.html#l135">
+                  <tt><i>135</i> &nbsp;</tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         </ul>
+      </div>
+   </body>
+</html>
