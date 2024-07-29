@@ -41,7 +41,6 @@ These publications source images from major international news agencies, includi
 - Getty Images
 - European Pressphoto Agency (EPA)
 
-Non je veux que tu m'arranges toute cette partie dans 1 bloc/ensemble de code
 
 
 # Installation and Usage Instructions
