@@ -51,7 +51,9 @@ queuelib==1.6.2
 requests==2.31.0
 requests-file==1.5.1
 Scrapy==2.9.0
+scrapy-user-agents==0.1.1
 service-identity==23.1.0
+setuptools==78.1.0
 six==1.16.0
 soupsieve==2.4.1
 sqlparse==0.4.4
@@ -62,7 +64,10 @@ tornado==6.3.2
 traitlets==5.9.0
 Twisted==22.10.0
 typing_extensions==4.7.1
+ua-parser==1.0.1
+ua-parser-builtins==0.18.0.post1
 urllib3==2.0.4
+user-agents==2.2.0
 w3lib==2.1.1
 wcwidth==0.2.6
 zope.interface==6.0

@@ -1,3 +1,6 @@
+# pictures/models.py
+# Description: This file contains the model for the PhotoGallery class
+
 from django.db import models
 from django.contrib.contenttypes.fields import GenericRelation
 from star_ratings.models import Rating
