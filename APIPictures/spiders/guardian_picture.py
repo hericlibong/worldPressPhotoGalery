@@ -7,7 +7,7 @@ from APIPictures.items import ApipicturesItem
 class GuardianPictureSpider(CrawlSpider):
     name = 'guardian_picture'
     allowed_domains = ['theguardian.com']
-    start_urls = ['https://www.theguardian.com/news/series/ten-best-photographs-of-the-day']
+    start_urls = ['https://www.theguardian.com/artanddesign/gallery/2024/aug/02/the-week-around-the-world-in-20-pictures']
     custom_settings = {
         'ROBOTSTXT_OBEY': False,
     }
