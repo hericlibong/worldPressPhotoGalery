@@ -1,1 +1,3 @@
-*HTML linguist-generated
+*.js linguist-vendored
+*.css linguist-vendored
+*.html linguist-generated=true
