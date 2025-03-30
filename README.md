@@ -1,95 +1,137 @@
+
+---
+
 # WorldPressPhotoGallery
 
 <p align="center">
   <img src="media/worldpressphoto.PNG" alt="worldpressphoto" width="600" height="400">
 </p>
 
-**WorldPressPhotoGallery** is a web application designed for photojournalism enthusiasts. It allows users to view, select, and vote for the most striking news images, highlighted for their photojournalistic impact.
+**WorldPressPhotoGallery** is a web application designed for photojournalism enthusiasts. It allows users to view, select, and rate the most striking news images, highlighted for their photojournalistic impact.
 
-Each week, we collect these emblematic images from the weekly selections of major media outlets. This collection is performed through scraping, using Scrapy, to gather the most compelling works of global photojournalism. Subsequently, with Django, we provide an interface where users can interact with these images, assess them, and soon, share their impressions.
+Each week, we collect these emblematic images from major media outlets via **Scrapy** spiders. The collected data is then stored and displayed in **Django**, providing an interface where users can interact with the images, vote, and (soon) share their impressions.
 
 ## Main Features
 
-- **Voting and Rating:** Registered users can vote for their favorite images and rate them on a scale from 1 to 10.
+- **Voting and Rating:** Registered users can vote for their favorite images (1 to 10 rating, or star rating).
+- **Scraping with Scrapy:** Automatically gather fresh images from international publications.
+- **Easy Setup:** Simple installation steps and environment configuration using `.env`.
 
-## Technology
+## Technology Stack
 
-This application utilizes Scrapy to collect images through spiders dedicated to each media outlet. The images are processed via Scrapy items before being sent to the database.
+- **Scrapy** (spiders for each media source)  
+- **Django** (models, views, templates)  
+- **SQLite3** database (by default)  
+- **python-decouple** for environment variables  
 
-  - **Scrapy:** Collects images via individual spiders.
-  - **Django:** The collected images are stored in a SQLite3 database and managed by a model of the framework, then displayed in the views and templates.
+## Supported Media (examples)
 
-## Supported Media
+- Washington Post, CNN, Guardian, The Week, etc.  
+- These often source from AP, Reuters, AFP, and other agencies.
 
-The list of supported media includes renowned international publications:
+---
 
-- Washington Post (USA)
-- Sydney Morning Herald (Australia)
-- CNN (USA)
-- Le Temps (Switzerland)
-- The Week Pictures (USA)
-- Guardian (UK)
-- Atlantic (USA)
-- Spiegel (Germany)
-- Die Welt (Germany)
+## Installation & Usage
 
-These publications source images from major international news agencies, including:
+### 1. Clone the repository
 
-- Associated Press (AP)
-- Reuters
-- Agence France-Presse (AFP)
-- Getty Images
-- European Pressphoto Agency (EPA)
-
-
-
-# Installation and Usage Instructions
-
-## Clone the repository
-In the terminal:  
-```console
+```bash
 git clone https://github.com/hericlibong/worldPressPhotoGalery
-```
-
-**Navigate to the directory** 
-Change into the directory with:
-```console
 cd worldPressPhotoGalery
 ```
 
-**Create a virtual environment**
-```console
-`python -m venv venv`
+### 2. Create & activate a virtual environment
+
+```bash
+python -m venv venv
 ```
 
-**Activate the virtual environment**:
-On Windows:
-```console
-`venv\Scripts\activate
-````
-On Unix or MacOS: 
-```console
-`source venv/bin/activate`
+- **On Windows**:
+  ```bash
+  venv\Scripts\activate
+  ```
+- **On Unix/macOS**:
+  ```bash
+  source venv/bin/activate
+  ```
+
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
 ```
 
-**Update the database with the latest images** 
-Execute:
-```console
-`python run_spiders.py`
+### 4. Configure environment variables
+
+1. Copy (or rename) the sample file to `.env`:
+   ```bash
+   cp .env.sample .env
+   ```
+2. In **`.env`**, define at least:
+   ```text
+   SECRET_KEY=your_secret_key_here
+   DEBUG=True
+   ```
+   *(For local development, `DEBUG=True` is fine; in production, you can set it to `False` and adjust accordingly.)*
+
+### 5. Scrape the latest images
+
+```bash
+python runspiders.py
 ```
- 
-**Navigate to the `src` directory**: 
-Change directories with:
-`cd src`
+This will launch the Scrapy spiders that gather images from supported media outlets and store them in the local SQLite database.
 
-**Start the Django server**: 
-```console
-`python manage.py runserver`
+### 6. Run the Django server
+
+From the `webapp` directory (or wherever your `manage.py` is located):
+
+```bash
+cd webapp
+python manage.py runserver
 ```
 
-**Access the application**: 
-After starting the server, open your web browser and go to:
-`http://127.0.0.1:8000/`
-to enjoy browsing and voting on photojournalistic images.
+### 7. Access the application
 
+Open your web browser and go to:
+[http://127.0.0.1:8000/](http://127.0.0.1:8000/)  
+You can now browse through and rate the photojournalistic images!
 
+---
+
+## Screenshots
+
+<p align="center">
+  <img src="media/worldpressphoto_rated.PNG" alt="worldpressphoto-rated" width="600" height="400">
+</p>
+
+---
+
+## Roadmap & Further Development
+
+- **Refactoring** (splitting apps, improving pipeline, etc.)  
+- **Dockerization**  
+- **PhotoQuiz** (a quiz feature under development)  
+- **Extended Media** (more spiders)  
+- **CI/CD** (tests, GitHub Actions)
+
+---
+
+## Contributing
+
+1. Fork the repository  
+2. Create a branch (`git checkout -b feature/my-feature`)  
+3. Commit your changes (`git commit -m "Add my feature"`)  
+4. Push to the branch (`git push origin feature/my-feature`)  
+5. Open a Pull Request
+
+---
+
+## License
+
+This project uses the **MIT License** (or whichever you prefer).  
+
+You’re free to modify the code, propose new features, or adapt it to your needs!
+
+---
+
+_Keep in mind this README can evolve as the project grows. For any questions or issues, feel free to open an Issue on GitHub._
