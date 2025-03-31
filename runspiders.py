@@ -1,13 +1,26 @@
+import os
 import subprocess
 
-spiders = ['guardian_picture', 'smh_picture', 'cnn_week_pics', 'atlantic_pictures',  
-         'theweek_pictures']
+os.makedirs('json_datas', exist_ok=True)
 
-processes = []
+spiders = [
+    'guardian_picture',
+    'smh_picture',
+    'cnn_week_pics',
+    'atlantic_pictures',
+    'theweek_pictures'
+]
+
 for spider in spiders:
-    cmd = ['scrapy', 'crawl', spider]
-    process = subprocess.Popen(cmd)
-    processes.append(process)
-    
-for process in processes:
-    process.wait()
+    outfile = f"json_datas/{spider}.json"
+
+    # Scrapy >= 2.9 => on spécifie :json pour indiquer le format
+    cmd = [
+        'scrapy', 'crawl', spider,
+        '-O', f'{outfile}:json',  # Overwrite + JSON format
+    ]
+
+    print("Running:", " ".join(cmd))
+    subprocess.run(cmd, check=True)
+
+print("All spiders done!")
