@@ -8,7 +8,7 @@ class CnnWeekPicsSpider(CrawlSpider):
     name = "cnn_week_pics"
     allowed_domains = ["edition.cnn.com"]
     start_urls = ["https://edition.cnn.com/world/photos"]
-    rules = (Rule(LinkExtractor(restrict_xpaths="//a[contains(., 'The week in 36 photos')]"), callback="parse_item", follow=True),)
+    rules = (Rule(LinkExtractor(restrict_xpaths="//a[contains(., 'The week in ')]"), callback="parse_item", follow=True),)
 
     def parse_item(self, response):
         container = response.xpath("//div[@data-component-name='image']")

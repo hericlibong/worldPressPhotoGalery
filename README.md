@@ -126,6 +126,62 @@ You can now browse through and rate the photojournalistic images!
 
 ---
 
+
+Voici un schéma résumé du flux, avec les principales étapes et quelques explications :
+
+```
+        ┌─────────────────────────────┐
+        │ Collecte des données via    │
+        │       Scrapy (spiders)      │
+        └─────────────┬───────────────┘
+                      │
+                      │
+                      ▼
+        ┌─────────────────────────────┐
+        │ Export des items en fichiers│
+        │       JSON (via -O option)  │
+        │   dans le dossier json_datas│
+        └─────────────┬───────────────┘
+                      │
+                      │
+                      ▼
+        ┌─────────────────────────────┐
+        │  Management Command Django  │
+        │   (import_photos)           │
+        │   lit les fichiers JSON     │
+        └─────────────┬───────────────┘
+                      │
+                      │
+                      ▼
+        ┌─────────────────────────────┐
+        │  Insertion via ORM dans     │
+        │  les modèles Django         │
+        │  (PhotoGallery, etc.)       │
+        └─────────────┬───────────────┘
+                      │
+                      │
+                      ▼
+        ┌─────────────────────────────┐
+        │  Base de données Django     │
+        │ (SQLite, ou plus tard,       │
+        │  PostgreSQL, etc.)          │
+        └─────────────────────────────┘
+```
+
+**Explications complémentaires :**
+
+1. **Scrapy** récupère et collecte les données grâce à ses spiders.
+2. Chaque spider exporte automatiquement ses items au format JSON dans le dossier `json_datas/` (chaque spider génère son propre fichier, par exemple `guardian_picture.json`).
+3. Une commande Django (`import_photos`) parcourt le dossier (ou un fichier spécifique) pour lire les fichiers JSON.
+4. Pour chaque item lu, la commande utilise la méthode `update_or_create()` pour insérer ou mettre à jour les enregistrements dans le modèle `PhotoGallery`.
+5. Les données finissent dans la base de données de l’application Django, prêtes à être utilisées par l’interface ou une API REST ultérieure.
+
+Ce schéma illustre la décomposition du flux en deux parties distinctes :  
+- **Collecte et export** (Scrapy et fichiers JSON)  
+- **Import et insertion** (Commande Django et ORM)
+
+Cela permet de travailler sur chaque partie de manière indépendante et d’assurer un traitement en lot efficace.
+
 ## License
 
 This project uses the **MIT License** (or whichever you prefer).  
