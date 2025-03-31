@@ -2,4 +2,4 @@
 venv/
 __pycache__/
 *.pyc
-json_data/
+json_datas/
