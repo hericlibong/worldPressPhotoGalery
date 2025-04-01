@@ -180,7 +180,69 @@ Ce schéma illustre la décomposition du flux en deux parties distinctes :
 - **Collecte et export** (Scrapy et fichiers JSON)  
 - **Import et insertion** (Commande Django et ORM)
 
-Cela permet de travailler sur chaque partie de manière indépendante et d’assurer un traitement en lot efficace.
+
+---
+
+## Docker Setup and Deployment
+
+This project includes Docker configuration to simplify local development and deployment. Below are the steps and details to build and run the application using Docker.
+
+### Files
+
+- **Dockerfile**  
+  Defines the Docker image for the application. It:
+  - Uses the official Python 3.12-slim base image.
+  - Sets environment variables to optimize performance.
+  - Installs required system packages (e.g., gcc, libpq-dev, libffi-dev).
+  - Installs Python dependencies from `requirements.txt`.
+  - Copies the source code into the container.
+  - Exposes port 8000.
+  - Sets the command to start the Django development server.
+
+- **docker-compose.yml**  
+  Orchestrates multiple services (by default, only the web service is active for SQLite usage). It:
+  - Builds the Docker image using the Dockerfile.
+  - Maps the container port 8000 to a port on the host (e.g., 8001 if configured).
+  - Loads environment variables from the non-versioned `.env` file via `env_file`.
+  - (Optionally) Includes a PostgreSQL service, which can be activated by modifying the environment variables and uncommenting the db section.
+
+### How to Use
+
+1. **Prepare your environment:**
+   - Ensure Docker Engine and docker-compose are installed on your system.
+   - Create a `.env` file at the root of the project (it should not be versioned) with your environment variables. For example:
+
+     ```dotenv
+     SECRET_KEY=django-insecure-#@f-i=h_px68s=vjtj=xo%@_0wl5uk&*kweft2531j1-a(-b^o
+     DEBUG=True
+     ```
+
+2. **Build and run the containers:**
+   - From the root of your project, run:
+     ```bash
+     docker-compose up --build
+     ```
+   - This command will build the Docker image and start the web service (and the database service if activated). By default, the Django development server is started with the command:
+     ```bash
+     python webapp/manage.py runserver 0.0.0.0:8000
+     ```
+
+3. **Access the Application:**
+   - Open your web browser and go to `http://localhost:8000` (or the host port specified in your docker-compose.yml) to view the application.
+
+4. **Notes for Developers:**
+   - The default configuration uses **SQLite** for the database. If you wish to test PostgreSQL, modify the environment variables in the docker-compose file and uncomment the `db` service section.
+   - All secrets (like `SECRET_KEY`) are managed via the `.env` file. This file is not versioned to ensure sensitive data is not exposed.
+   - To run management commands inside the container (for example, migrations), you can use:
+     ```bash
+     docker-compose exec web python webapp/manage.py migrate
+     ```
+   - When deploying to production, consider switching from the Django development server (`runserver`) to a production-ready server (like Gunicorn) and reviewing your settings accordingly.
+
+---
+
+
+
 
 ## License
 
