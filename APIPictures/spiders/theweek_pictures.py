@@ -26,5 +26,6 @@ class TheweekPicturesSpider(CrawlSpider):
             srcset = item.xpath(".//picture/source/@srcset").get()
             custom_items['picture'] = srcset.split(", ")[0].split(" ")[0]
             custom_items['location'] = 'Ref. to caption'
-            custom_items['pictureEditor'] = response.xpath("//div[@class='author-byline__author-text']//span/a[@class='link author-byline__link']/text()").get()
+            picture_editor = response.xpath("//div[@class='author-byline__author-text']//span/a[@class='link author-byline__link']/text()").get()
+            custom_items['pictureEditor'] = picture_editor if picture_editor else "Unknown"
             yield custom_items
