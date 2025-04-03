@@ -1,12 +1,14 @@
 [tool.pytest.ini_options]
-pythonpath = ["."]
-testpaths = ["APIPictures/tests"]
+DJANGO_SETTINGS_MODULE = "gallery.settings"
+pythonpath = [".", "webapp"]
+testpaths = ["APIPictures/tests", "webapp/authentication/tests/"]
 python_files = ["test_*.py"]
 addopts = [
     "-ra",
     "--strict-markers",
     "--disable-warnings",
     "--cov=APIPictures",
+    "--cov=webapp",
     "--cov-report=term-missing",
 ]
 filterwarnings = [
@@ -19,7 +21,11 @@ omit = [
     "*/tests/*",
     "*/__init__.py",
     "*/settings.py",
-    "*middlewares.py",  
+    "*middlewares.py",
+    "*/migrations/*",
+    "*/wsgi.py",
+    "*/asgi.py",
+    "manage.py", 
 ]
 
 [tool.coverage.report]
