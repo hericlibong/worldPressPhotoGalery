@@ -9,6 +9,7 @@ addopts = [
     "--disable-warnings",
     "--cov=APIPictures",
     "--cov=webapp",
+    "--cov=webapp/authentication",
     "--cov-report=term-missing",
 ]
 filterwarnings = [
