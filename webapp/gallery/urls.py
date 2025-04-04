@@ -1,7 +1,7 @@
 # webapp/urls.py  OU  webapp/gallery/urls.py (selon ta structuration)
 
 from django.contrib import admin
-from photoquiz.views import QuizListView, quiz_detail_view, quiz_final_view
+
 from django.urls import path, include
 
 urlpatterns = [
@@ -16,7 +16,4 @@ urlpatterns = [
     # L’URLConf star_ratings
     path('ratings/', include('star_ratings.urls', namespace='ratings')),
 
-    path('quiz/<str:slug>/<int:event_number>/', quiz_detail_view, name = 'quiz-detail'),
-    path('quiz/', QuizListView.as_view(), name='quiz-list'),
-    path('quiz_score/<str:slug>/', quiz_final_view, name = 'final-score')
 ]
