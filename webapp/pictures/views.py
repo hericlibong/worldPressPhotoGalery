@@ -57,10 +57,8 @@ class ImageListView(ListView):
         formatted_date = date.strftime('%a %d %b %Y')
         context['date'] = formatted_date
         return context
+ 
     
-
-
-
 class ImageByRatingView(ListView):
     model = PhotoGallery
     template_name = 'pictures/images_by_rating.html'
@@ -71,9 +69,7 @@ class ImageByRatingView(ListView):
         return PhotoGallery.objects.filter(ratings__isnull=False).order_by('-ratings__average')
         
 
-
 # statistics views ###
-
 def statistics_views(request):
     media_counts = PhotoGallery.objects.values('media').annotate(count=Count('id')) 
     media_data = [{'media':item['media'], 'count':item['count']} for item in media_counts] 
@@ -111,11 +107,7 @@ class ImageByMediaView(ListView):
         return context
 
 
-
-
-
 # browse pictures dropdown menu
-
 def image_search_view(request):
     form = ImageSearchForm(request.GET)
     images = []
@@ -124,13 +116,8 @@ def image_search_view(request):
     if form.is_valid():
         keyword = form.cleaned_data.get('keyword')
         search_field = form.cleaned_data.get('search_field')
-
-        # if keyword and search_field:
-        #     # Utilisez le champ de recherche sélectionné pour filtrer les images
-        #     filter_kwargs = {f'{search_field}__icontains': keyword}
-        #     images = PhotoGallery.objects.filter(**filter_kwargs)
-        #     results_counts = len(images)
         
+        # Vérification si le champ de recherche est sélectionné
         if keyword:
             if search_field == 'all':
                 # Utilisation de Q pour rechercher dans tous les champs pertinents

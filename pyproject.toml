@@ -1,7 +1,7 @@
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "gallery.settings"
 pythonpath = [".", "webapp"]
-testpaths = ["APIPictures/tests", "webapp/authentication/tests/"]
+testpaths = ["APIPictures/tests", "webapp/authentication/tests/", "webapp/pictures/tests/"]
 python_files = ["test_*.py"]
 addopts = [
     "-ra",
@@ -10,6 +10,7 @@ addopts = [
     "--cov=APIPictures",
     "--cov=webapp",
     "--cov=webapp/authentication",
+    "--cov=webapp/pictures",
     "--cov-report=term-missing",
 ]
 filterwarnings = [

@@ -6,8 +6,6 @@ from django.contrib.contenttypes.fields import GenericRelation
 from star_ratings.models import Rating
 
 
-
-
 class PhotoGallery(models.Model):
     media = models.CharField(max_length=100, blank=False)
     sectionTitle = models.CharField(max_length= 200, blank=False)
@@ -28,8 +26,3 @@ class PhotoGallery(models.Model):
 
     def __str__(self):
         return f'{self.media}'
-    
-
-    
-
-    
