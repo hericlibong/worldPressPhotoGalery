@@ -34,4 +34,3 @@ omit = [
 show_missing = true
 fail_under = 80
 
-

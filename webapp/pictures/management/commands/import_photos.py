@@ -3,6 +3,7 @@ import json
 from django.core.management.base import BaseCommand, CommandError
 from pictures.models import PhotoGallery
 
+
 class Command(BaseCommand):
     """
     Importe les items photo depuis tous les fichiers .json présents dans un répertoire,
@@ -104,4 +105,3 @@ class Command(BaseCommand):
                 count_updated += 1
 
         return count_created, count_updated
-

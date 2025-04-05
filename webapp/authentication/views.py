@@ -11,11 +11,11 @@ def signup_page(request):
     if request.method == 'POST':
         form = forms.SignupForm(request.POST)
         if form.is_valid():
-            user =form.save()
-            #auto-login user
+            user = form.save()
+            # Auto-login user
             login(request, user)
             return redirect(settings.LOGIN_REDIRECT_URL)
-    return render(request, 'authentication/signup.html', context = {'form':form}) 
+    return render(request, 'authentication/signup.html', context={'form': form})
 
 
 def logout_user(request):

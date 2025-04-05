@@ -2,6 +2,7 @@ import os
 import subprocess
 import argparse
 
+
 # Liste des spiders disponibles
 ALL_SPIDERS = [
     'guardian_picture',
@@ -10,6 +11,7 @@ ALL_SPIDERS = [
     'atlantic_pictures',
     'theweek_pictures'
 ]
+
 
 def prompt_spider_choice():
     # Demander à l'utilisateur s'il souhaite lancer tous les spiders
@@ -32,6 +34,7 @@ def prompt_spider_choice():
         except ValueError:
             print("Entrée invalide. Lancement de tous les spiders par défaut.")
             return ALL_SPIDERS
+
 
 def main():
     parser = argparse.ArgumentParser(
@@ -69,10 +72,12 @@ def main():
         ]
         print(f"Lancement du spider '{spider}' (fichier: {outfile})")
         subprocess.run(cmd, check=True)
-    if len(spiders_to_run)== len(ALL_SPIDERS):
+
+    if len(spiders_to_run) == len(ALL_SPIDERS):
         print("Tous les spiders ont été lancés.")
     else:
         print(f"le spider {spiders_to_run} a été lancé.")
+
 
 if __name__ == "__main__":
     main()
