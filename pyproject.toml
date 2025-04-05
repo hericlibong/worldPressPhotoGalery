@@ -33,3 +33,24 @@ omit = [
 [tool.coverage.report]
 show_missing = true
 fail_under = 80
+
+
+[flake8]
+max-line-length = 88
+exclude = 
+    .venv,
+    venv,
+    migrations,
+    __pycache__,
+    manage.py
+ignore =
+    E203  
+    W503  
+    F401  
+    F403  
+    F405  
+    E501  
+    B905  
+statistics = True
+count = True
+
