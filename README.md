@@ -1,5 +1,7 @@
 
 ---
+![CI/CD Pipeline](https://github.com/hericlibong/worldPressPhotoGalery/actions/workflows/ci_cd_pipeline.yml/badge.svg)
+
 
 # WorldPressPhotoGallery
 
