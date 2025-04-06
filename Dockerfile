@@ -30,4 +30,6 @@ COPY . /app/
 EXPOSE 8000
 
 # Etape 9 : Définir la commande de démarrage du conteneur
-CMD ["python", "webapp/manage.py", "runserver", "0.0.0.0:8000"]
+# CMD ["python", "webapp/manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["sh", "-c", "python manage.py collectstatic --noinput && python webapp/manage.py runserver 0.0.0.0:8000"]
+
