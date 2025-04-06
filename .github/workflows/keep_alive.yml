@@ -1,0 +1,24 @@
+# .github/workflows/keep_alive.yml
+
+name: Keep Render App Alive
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'  # Ping toutes les 10 minutes
+
+jobs:
+  ping_render:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ping Render App
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://worldpressphotorating.onrender.com/)
+          echo "Statut HTTP retourné : $STATUS"
+
+          if [ "$STATUS" -ne 200 ]; then
+            echo "❌ Le site Render ne répond pas correctement. Code HTTP: $STATUS"
+            exit 1
+          else
+            echo "✅ Ping réussi ! L'application est active."
+          fi

@@ -32,4 +32,7 @@ RUN python webapp/manage.py collectstatic --noinput
 EXPOSE 8000
 
 # Étape 10 : Démarrer l’application avec gunicorn pour la prod (meilleure pratique)
-CMD ["gunicorn", "gallery.wsgi:application", "--bind", "0.0.0.0:8000"]
+# CMD ["gunicorn", "gallery.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "webapp.gallery.wsgi:application", "--bind", "0.0.0.0:8000"]
+
+
