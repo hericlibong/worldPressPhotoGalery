@@ -14,12 +14,16 @@ ALL_SPIDERS = [
 
 
 def prompt_spider_choice():
-    # Demander à l'utilisateur s'il souhaite lancer tous les spiders
+    # Environnement CI/CD : on lance automatiquement tous les spiders
+    if os.getenv("CI") == "true":
+        print("Mode CI détecté. Tous les spiders seront lancés sans prompt.")
+        return ALL_SPIDERS
+
+    # Sinon, prompt utilisateur
     choice = input("Lancer tous les spiders ? [Y/N]: ").strip().lower()
     if choice == 'y' or choice == '':
         return ALL_SPIDERS
     else:
-        # Afficher la liste et demander de choisir un spider
         print("Liste des spiders disponibles :")
         for idx, spider in enumerate(ALL_SPIDERS, start=1):
             print(f"{idx}. {spider}")
