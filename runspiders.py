@@ -5,8 +5,8 @@ import argparse
 
 # Liste des spiders disponibles
 ALL_SPIDERS = [
-    'guardian_picture',
-    'smh_picture',
+    # 'guardian_picture',
+    # 'smh_picture',
     'cnn_week_pics',
     'atlantic_pictures',
     'theweek_pictures'

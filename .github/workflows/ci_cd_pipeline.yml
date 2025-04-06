@@ -40,14 +40,13 @@ jobs:
         run: |
           python runspiders.py
 
-      - name: Importer les données en base Django
+      - name: 🗃️ Importer les données en base Django
         run: |
           cd webapp
-          python manage.py import_photos
+          python manage.py import_photos --dir=../json_datas
         env:
           DJANGO_SETTINGS_MODULE: gallery.settings
           PYTHONPATH: ../webapp
-        
 
       - name: 🐳 Log in to Docker Hub
         uses: docker/login-action@v2
