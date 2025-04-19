@@ -66,6 +66,17 @@ jobs:
         run: |
           cd webapp
           python manage.py import_photos --dir=../json_datas
+      
+      - name: 💾 Commit updated db.sqlite3
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add webapp/db.sqlite3
+          git diff --cached --quiet || git commit -m "🤖 Auto update DB [schedule]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
 
   docker:
