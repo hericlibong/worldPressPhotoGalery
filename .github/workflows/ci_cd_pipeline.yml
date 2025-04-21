@@ -9,6 +9,10 @@ on:
     - cron: '0 7 * * 6'  
     - cron: '0 7 * * 1' 
 
+permissions:
+  contents: write
+  
+
 env:
   DJANGO_SETTINGS_MODULE: gallery.settings
   PYTHONPATH: ./webapp
