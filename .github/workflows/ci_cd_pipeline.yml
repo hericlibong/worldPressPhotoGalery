@@ -11,7 +11,6 @@ on:
 
 permissions:
   contents: write
-  
 
 env:
   DJANGO_SETTINGS_MODULE: gallery.settings
@@ -66,12 +65,16 @@ jobs:
       - name: 🕷️ Run spiders
         run: python runspiders.py
 
+      - name: 🛠️ Prepare DB (migrate)
+        run: |
+          cd webapp
+          python manage.py makemigrations --noinput
+          python manage.py migrate --noinput
+
       - name: 🗃️ Import JSONs to DB
         run: |
           cd webapp
           python manage.py import_photos --dir=../json_datas
-      
-
 
 
   docker:
