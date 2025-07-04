@@ -2,4 +2,4 @@
 venv/
 __pycache__/
 *.pyc
-json_datas/
+json_datas/webapp/db.sqlite3
